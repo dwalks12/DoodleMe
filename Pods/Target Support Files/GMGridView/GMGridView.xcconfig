@@ -1,0 +1,1 @@
+GMGRIDVIEW_OTHER_LDFLAGS = -framework "QuartzCore"

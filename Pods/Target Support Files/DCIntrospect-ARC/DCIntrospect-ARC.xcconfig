@@ -1,0 +1,1 @@
+DCINTROSPECT_ARC_OTHER_LDFLAGS = -framework "QuartzCore"

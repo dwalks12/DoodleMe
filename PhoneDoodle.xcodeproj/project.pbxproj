@@ -1,0 +1,640 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5ABECD2C1D5DBA3780E78AB1 /* libPods-PhoneDoodle.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B80DBC8390825CC8AB223847 /* libPods-PhoneDoodle.a */; };
+		855C835ABB785036C271EFC6 /* UIButton+DMButtonAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 855C83AB61416C33B6A0FE2A /* UIButton+DMButtonAttributes.m */; };
+		855C840415D968875A93B9E7 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 855C84B7DA241397BB9CF8E0 /* LogInViewController.m */; };
+		855C8639BACE14762A5716BF /* NewChainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 855C854C740A8902F3E07125 /* NewChainViewController.m */; };
+		855C876FC4F773D8F9694FD4 /* LogInViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 855C8183D2A1B4FF6896E666 /* LogInViewModel.m */; };
+		855C87705DCFDCA5EA237859 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 855C89B1B0EF7F2E21D6F25C /* MainMenuViewController.m */; };
+		855C890DC99847ED4FE598EB /* WelcomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 855C828C4AEED527342CE055 /* WelcomePageViewController.m */; };
+		855C8A3D2C76787ADDFAA658 /* NSObject+BTRACAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 855C8EFF7D859F6F82136A1C /* NSObject+BTRACAdditions.m */; };
+		855C8E07881453CFE1576C70 /* UIColor+DMHexColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 855C8F31638A6198AF6C0FEA /* UIColor+DMHexColors.m */; };
+		E856828D1B6E744E00C47736 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E856828C1B6E744E00C47736 /* main.m */; };
+		E85682901B6E744E00C47736 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E856828F1B6E744E00C47736 /* AppDelegate.m */; };
+		E85682931B6E744E00C47736 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E85682921B6E744E00C47736 /* ViewController.m */; };
+		E85682961B6E744E00C47736 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E85682941B6E744E00C47736 /* Main.storyboard */; };
+		E85682981B6E744E00C47736 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E85682971B6E744E00C47736 /* Images.xcassets */; };
+		E856829B1B6E744E00C47736 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E85682991B6E744E00C47736 /* LaunchScreen.xib */; };
+		E85682A71B6E744F00C47736 /* PhoneDoodleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E85682A61B6E744F00C47736 /* PhoneDoodleTests.m */; };
+		E8A0D83C1B77D52A0048B619 /* undoIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = E8A0D83B1B77D52A0048B619 /* undoIcon.png */; };
+		E8A0D8431B7A3FC50048B619 /* searchfield.png in Resources */ = {isa = PBXBuildFile; fileRef = E8A0D8421B7A3FC50048B619 /* searchfield.png */; };
+		E8A0D8A91B8370E90048B619 /* menu_icon 2.png in Resources */ = {isa = PBXBuildFile; fileRef = E8A0D8A81B8370E90048B619 /* menu_icon 2.png */; };
+		E8A0D8AB1B8370F00048B619 /* arrow_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E8A0D8AA1B8370F00048B619 /* arrow_icon.png */; };
+		E8A0D8AE1B85EA5D0048B619 /* BubblegumSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8A0D8AD1B85EA160048B619 /* BubblegumSans-Regular.ttf */; };
+		E8A0D8B01B85F4230048B619 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = E8A0D8AF1B85F4230048B619 /* settings.png */; };
+		E8A0D8B21B85F5C80048B619 /* setting-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E8A0D8B11B85F5C80048B619 /* setting-icon.png */; };
+		E8A0D8B81B85FBAE0048B619 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A0D8B71B85FBAE0048B619 /* SettingsViewController.m */; };
+		E8A0D8BB1B86082D0048B619 /* WritingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A0D8BA1B86082D0048B619 /* WritingViewController.m */; };
+		E8A0D8BE1B862A8C0048B619 /* YourGamesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A0D8BD1B862A8C0048B619 /* YourGamesViewController.m */; };
+		E8A0D8C11B87256E0048B619 /* SelectedGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A0D8C01B87256E0048B619 /* SelectedGameViewController.m */; };
+		E8D0A5721B8E27B80066ED6E /* customSlider.png in Resources */ = {isa = PBXBuildFile; fileRef = E8D0A5711B8E27B80066ED6E /* customSlider.png */; };
+		E8D0A5741B8E281B0066ED6E /* customSlider2.png in Resources */ = {isa = PBXBuildFile; fileRef = E8D0A5731B8E281B0066ED6E /* customSlider2.png */; };
+		E8D0A5771B8E88B00066ED6E /* ShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D0A5761B8E88B00066ED6E /* ShopViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E85682A11B6E744F00C47736 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E856827F1B6E744E00C47736 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E85682861B6E744E00C47736;
+			remoteInfo = PhoneDoodle;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		61072861FA385C7B64DB6DAC /* Pods-PhoneDoodle.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhoneDoodle.release.xcconfig"; path = "Pods/Target Support Files/Pods-PhoneDoodle/Pods-PhoneDoodle.release.xcconfig"; sourceTree = "<group>"; };
+		855C81133E5928DBACB0C4E5 /* LogInViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewModel.h; sourceTree = "<group>"; };
+		855C8183D2A1B4FF6896E666 /* LogInViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewModel.m; sourceTree = "<group>"; };
+		855C828C4AEED527342CE055 /* WelcomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomePageViewController.m; sourceTree = "<group>"; };
+		855C83AB61416C33B6A0FE2A /* UIButton+DMButtonAttributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+DMButtonAttributes.m"; sourceTree = "<group>"; };
+		855C84B7DA241397BB9CF8E0 /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
+		855C854C740A8902F3E07125 /* NewChainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewChainViewController.m; sourceTree = "<group>"; };
+		855C87CCA2E53B16059E1ED6 /* NewChainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewChainViewController.h; sourceTree = "<group>"; };
+		855C883D783A02C7D57E916C /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
+		855C8956D3D1B77F71BB2063 /* NSObject+BTRACAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+BTRACAdditions.h"; sourceTree = "<group>"; };
+		855C89B1B0EF7F2E21D6F25C /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
+		855C8A198EE760126C0D5D72 /* UIButton+DMButtonAttributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+DMButtonAttributes.h"; sourceTree = "<group>"; };
+		855C8A5C058663F718B10BCA /* UIColor+DMHexColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+DMHexColors.h"; sourceTree = "<group>"; };
+		855C8DDB6BE3096227C64C1A /* WelcomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomePageViewController.h; sourceTree = "<group>"; };
+		855C8EE0161FBBED4054A077 /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
+		855C8EFF7D859F6F82136A1C /* NSObject+BTRACAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+BTRACAdditions.m"; sourceTree = "<group>"; };
+		855C8F31638A6198AF6C0FEA /* UIColor+DMHexColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+DMHexColors.m"; sourceTree = "<group>"; };
+		B80DBC8390825CC8AB223847 /* libPods-PhoneDoodle.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PhoneDoodle.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E85682871B6E744E00C47736 /* PhoneDoodle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhoneDoodle.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E856828B1B6E744E00C47736 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E856828C1B6E744E00C47736 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E856828E1B6E744E00C47736 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E856828F1B6E744E00C47736 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E85682911B6E744E00C47736 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E85682921B6E744E00C47736 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E85682951B6E744E00C47736 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E85682971B6E744E00C47736 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E856829A1B6E744E00C47736 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		E85682A01B6E744F00C47736 /* PhoneDoodleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhoneDoodleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E85682A51B6E744F00C47736 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E85682A61B6E744F00C47736 /* PhoneDoodleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhoneDoodleTests.m; sourceTree = "<group>"; };
+		E8A0D83B1B77D52A0048B619 /* undoIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = undoIcon.png; path = images/undoIcon.png; sourceTree = "<group>"; };
+		E8A0D8421B7A3FC50048B619 /* searchfield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = searchfield.png; path = images/searchfield.png; sourceTree = "<group>"; };
+		E8A0D8A81B8370E90048B619 /* menu_icon 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu_icon 2.png"; path = "images/menu_icon 2.png"; sourceTree = "<group>"; };
+		E8A0D8AA1B8370F00048B619 /* arrow_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = arrow_icon.png; path = images/arrow_icon.png; sourceTree = "<group>"; };
+		E8A0D8AD1B85EA160048B619 /* BubblegumSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "BubblegumSans-Regular.ttf"; path = "../../Downloads/Bubblegum_Sans/BubblegumSans-Regular.ttf"; sourceTree = "<group>"; };
+		E8A0D8AF1B85F4230048B619 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings.png; path = images/settings.png; sourceTree = "<group>"; };
+		E8A0D8B11B85F5C80048B619 /* setting-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "setting-icon.png"; path = "images/setting-icon.png"; sourceTree = "<group>"; };
+		E8A0D8B61B85FBAE0048B619 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		E8A0D8B71B85FBAE0048B619 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		E8A0D8B91B86082D0048B619 /* WritingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WritingViewController.h; sourceTree = "<group>"; };
+		E8A0D8BA1B86082D0048B619 /* WritingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WritingViewController.m; sourceTree = "<group>"; };
+		E8A0D8BC1B862A8C0048B619 /* YourGamesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YourGamesViewController.h; sourceTree = "<group>"; };
+		E8A0D8BD1B862A8C0048B619 /* YourGamesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YourGamesViewController.m; sourceTree = "<group>"; };
+		E8A0D8BF1B87256D0048B619 /* SelectedGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectedGameViewController.h; sourceTree = "<group>"; };
+		E8A0D8C01B87256E0048B619 /* SelectedGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectedGameViewController.m; sourceTree = "<group>"; };
+		E8D0A5711B8E27B80066ED6E /* customSlider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = customSlider.png; path = images/customSlider.png; sourceTree = "<group>"; };
+		E8D0A5731B8E281B0066ED6E /* customSlider2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = customSlider2.png; path = images/customSlider2.png; sourceTree = "<group>"; };
+		E8D0A5751B8E88B00066ED6E /* ShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopViewController.h; sourceTree = "<group>"; };
+		E8D0A5761B8E88B00066ED6E /* ShopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopViewController.m; sourceTree = "<group>"; };
+		F2113D16DDD2A4F0B3F8E133 /* Pods-PhoneDoodle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhoneDoodle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PhoneDoodle/Pods-PhoneDoodle.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E85682841B6E744E00C47736 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5ABECD2C1D5DBA3780E78AB1 /* libPods-PhoneDoodle.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E856829D1B6E744F00C47736 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		855C8A0D38830FBF861EE981 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				855C8EFF7D859F6F82136A1C /* NSObject+BTRACAdditions.m */,
+				855C8956D3D1B77F71BB2063 /* NSObject+BTRACAdditions.h */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		B8061277CCAC52CDE9EF3BEB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B80DBC8390825CC8AB223847 /* libPods-PhoneDoodle.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C4D1C3451FF129B5953D5FE3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F2113D16DDD2A4F0B3F8E133 /* Pods-PhoneDoodle.debug.xcconfig */,
+				61072861FA385C7B64DB6DAC /* Pods-PhoneDoodle.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E856827E1B6E744E00C47736 = {
+			isa = PBXGroup;
+			children = (
+				E85682891B6E744E00C47736 /* PhoneDoodle */,
+				E85682A31B6E744F00C47736 /* PhoneDoodleTests */,
+				E85682881B6E744E00C47736 /* Products */,
+				C4D1C3451FF129B5953D5FE3 /* Pods */,
+				B8061277CCAC52CDE9EF3BEB /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E85682881B6E744E00C47736 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E85682871B6E744E00C47736 /* PhoneDoodle.app */,
+				E85682A01B6E744F00C47736 /* PhoneDoodleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E85682891B6E744E00C47736 /* PhoneDoodle */ = {
+			isa = PBXGroup;
+			children = (
+				E8A0D8AC1B85E9EA0048B619 /* Fonts */,
+				E8A0D83A1B77D4B90048B619 /* images */,
+				E8A0D8391B77D3250048B619 /* ViewControllers */,
+				E856828E1B6E744E00C47736 /* AppDelegate.h */,
+				E856828F1B6E744E00C47736 /* AppDelegate.m */,
+				E85682941B6E744E00C47736 /* Main.storyboard */,
+				E85682971B6E744E00C47736 /* Images.xcassets */,
+				E85682991B6E744E00C47736 /* LaunchScreen.xib */,
+				E856828A1B6E744E00C47736 /* Supporting Files */,
+			);
+			path = PhoneDoodle;
+			sourceTree = "<group>";
+		};
+		E856828A1B6E744E00C47736 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E856828B1B6E744E00C47736 /* Info.plist */,
+				E856828C1B6E744E00C47736 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E85682A31B6E744F00C47736 /* PhoneDoodleTests */ = {
+			isa = PBXGroup;
+			children = (
+				E85682A61B6E744F00C47736 /* PhoneDoodleTests.m */,
+				E85682A41B6E744F00C47736 /* Supporting Files */,
+			);
+			path = PhoneDoodleTests;
+			sourceTree = "<group>";
+		};
+		E85682A41B6E744F00C47736 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E85682A51B6E744F00C47736 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E8A0D8391B77D3250048B619 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E85682911B6E744E00C47736 /* ViewController.h */,
+				E85682921B6E744E00C47736 /* ViewController.m */,
+				855C84B7DA241397BB9CF8E0 /* LogInViewController.m */,
+				855C8EE0161FBBED4054A077 /* LogInViewController.h */,
+				855C8183D2A1B4FF6896E666 /* LogInViewModel.m */,
+				855C81133E5928DBACB0C4E5 /* LogInViewModel.h */,
+				855C8A0D38830FBF861EE981 /* Protocols */,
+				855C828C4AEED527342CE055 /* WelcomePageViewController.m */,
+				855C8DDB6BE3096227C64C1A /* WelcomePageViewController.h */,
+				855C854C740A8902F3E07125 /* NewChainViewController.m */,
+				855C87CCA2E53B16059E1ED6 /* NewChainViewController.h */,
+				855C89B1B0EF7F2E21D6F25C /* MainMenuViewController.m */,
+				855C883D783A02C7D57E916C /* MainMenuViewController.h */,
+				855C8F31638A6198AF6C0FEA /* UIColor+DMHexColors.m */,
+				855C8A5C058663F718B10BCA /* UIColor+DMHexColors.h */,
+				855C83AB61416C33B6A0FE2A /* UIButton+DMButtonAttributes.m */,
+				855C8A198EE760126C0D5D72 /* UIButton+DMButtonAttributes.h */,
+				E8A0D8B61B85FBAE0048B619 /* SettingsViewController.h */,
+				E8A0D8B71B85FBAE0048B619 /* SettingsViewController.m */,
+				E8A0D8B91B86082D0048B619 /* WritingViewController.h */,
+				E8A0D8BA1B86082D0048B619 /* WritingViewController.m */,
+				E8A0D8BC1B862A8C0048B619 /* YourGamesViewController.h */,
+				E8A0D8BD1B862A8C0048B619 /* YourGamesViewController.m */,
+				E8A0D8BF1B87256D0048B619 /* SelectedGameViewController.h */,
+				E8A0D8C01B87256E0048B619 /* SelectedGameViewController.m */,
+				E8D0A5751B8E88B00066ED6E /* ShopViewController.h */,
+				E8D0A5761B8E88B00066ED6E /* ShopViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E8A0D83A1B77D4B90048B619 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				E8D0A5711B8E27B80066ED6E /* customSlider.png */,
+				E8D0A5731B8E281B0066ED6E /* customSlider2.png */,
+				E8A0D8AF1B85F4230048B619 /* settings.png */,
+				E8A0D8AA1B8370F00048B619 /* arrow_icon.png */,
+				E8A0D8B11B85F5C80048B619 /* setting-icon.png */,
+				E8A0D8A81B8370E90048B619 /* menu_icon 2.png */,
+				E8A0D8421B7A3FC50048B619 /* searchfield.png */,
+				E8A0D83B1B77D52A0048B619 /* undoIcon.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		E8A0D8AC1B85E9EA0048B619 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E8A0D8AD1B85EA160048B619 /* BubblegumSans-Regular.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E85682861B6E744E00C47736 /* PhoneDoodle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E85682AA1B6E744F00C47736 /* Build configuration list for PBXNativeTarget "PhoneDoodle" */;
+			buildPhases = (
+				3A8E0A793F536AF74CE1B5FE /* Check Pods Manifest.lock */,
+				E85682831B6E744E00C47736 /* Sources */,
+				E85682841B6E744E00C47736 /* Frameworks */,
+				E85682851B6E744E00C47736 /* Resources */,
+				CF199DAA25A38A23E5D509DF /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PhoneDoodle;
+			productName = PhoneDoodle;
+			productReference = E85682871B6E744E00C47736 /* PhoneDoodle.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E856829F1B6E744F00C47736 /* PhoneDoodleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E85682AD1B6E744F00C47736 /* Build configuration list for PBXNativeTarget "PhoneDoodleTests" */;
+			buildPhases = (
+				E856829C1B6E744F00C47736 /* Sources */,
+				E856829D1B6E744F00C47736 /* Frameworks */,
+				E856829E1B6E744F00C47736 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E85682A21B6E744F00C47736 /* PBXTargetDependency */,
+			);
+			name = PhoneDoodleTests;
+			productName = PhoneDoodleTests;
+			productReference = E85682A01B6E744F00C47736 /* PhoneDoodleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E856827F1B6E744E00C47736 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "Rise Digital";
+				TargetAttributes = {
+					E85682861B6E744E00C47736 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					E856829F1B6E744F00C47736 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = E85682861B6E744E00C47736;
+					};
+				};
+			};
+			buildConfigurationList = E85682821B6E744E00C47736 /* Build configuration list for PBXProject "PhoneDoodle" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E856827E1B6E744E00C47736;
+			productRefGroup = E85682881B6E744E00C47736 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E85682861B6E744E00C47736 /* PhoneDoodle */,
+				E856829F1B6E744F00C47736 /* PhoneDoodleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E85682851B6E744E00C47736 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8A0D8AE1B85EA5D0048B619 /* BubblegumSans-Regular.ttf in Resources */,
+				E85682961B6E744E00C47736 /* Main.storyboard in Resources */,
+				E8A0D8A91B8370E90048B619 /* menu_icon 2.png in Resources */,
+				E8D0A5721B8E27B80066ED6E /* customSlider.png in Resources */,
+				E8D0A5741B8E281B0066ED6E /* customSlider2.png in Resources */,
+				E856829B1B6E744E00C47736 /* LaunchScreen.xib in Resources */,
+				E8A0D8AB1B8370F00048B619 /* arrow_icon.png in Resources */,
+				E8A0D83C1B77D52A0048B619 /* undoIcon.png in Resources */,
+				E8A0D8B01B85F4230048B619 /* settings.png in Resources */,
+				E85682981B6E744E00C47736 /* Images.xcassets in Resources */,
+				E8A0D8431B7A3FC50048B619 /* searchfield.png in Resources */,
+				E8A0D8B21B85F5C80048B619 /* setting-icon.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E856829E1B6E744F00C47736 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3A8E0A793F536AF74CE1B5FE /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CF199DAA25A38A23E5D509DF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PhoneDoodle/Pods-PhoneDoodle-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E85682831B6E744E00C47736 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E85682931B6E744E00C47736 /* ViewController.m in Sources */,
+				E85682901B6E744E00C47736 /* AppDelegate.m in Sources */,
+				E856828D1B6E744E00C47736 /* main.m in Sources */,
+				E8A0D8B81B85FBAE0048B619 /* SettingsViewController.m in Sources */,
+				855C840415D968875A93B9E7 /* LogInViewController.m in Sources */,
+				855C876FC4F773D8F9694FD4 /* LogInViewModel.m in Sources */,
+				E8A0D8BB1B86082D0048B619 /* WritingViewController.m in Sources */,
+				E8A0D8BE1B862A8C0048B619 /* YourGamesViewController.m in Sources */,
+				E8D0A5771B8E88B00066ED6E /* ShopViewController.m in Sources */,
+				855C8A3D2C76787ADDFAA658 /* NSObject+BTRACAdditions.m in Sources */,
+				855C890DC99847ED4FE598EB /* WelcomePageViewController.m in Sources */,
+				855C8639BACE14762A5716BF /* NewChainViewController.m in Sources */,
+				E8A0D8C11B87256E0048B619 /* SelectedGameViewController.m in Sources */,
+				855C87705DCFDCA5EA237859 /* MainMenuViewController.m in Sources */,
+				855C8E07881453CFE1576C70 /* UIColor+DMHexColors.m in Sources */,
+				855C835ABB785036C271EFC6 /* UIButton+DMButtonAttributes.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E856829C1B6E744F00C47736 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E85682A71B6E744F00C47736 /* PhoneDoodleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E85682A21B6E744F00C47736 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E85682861B6E744E00C47736 /* PhoneDoodle */;
+			targetProxy = E85682A11B6E744F00C47736 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E85682941B6E744E00C47736 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E85682951B6E744E00C47736 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E85682991B6E744E00C47736 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E856829A1B6E744E00C47736 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E85682A81B6E744F00C47736 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E85682A91B6E744F00C47736 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E85682AB1B6E744F00C47736 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2113D16DDD2A4F0B3F8E133 /* Pods-PhoneDoodle.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PhoneDoodle/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E85682AC1B6E744F00C47736 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61072861FA385C7B64DB6DAC /* Pods-PhoneDoodle.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PhoneDoodle/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E85682AE1B6E744F00C47736 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PhoneDoodleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhoneDoodle.app/PhoneDoodle";
+			};
+			name = Debug;
+		};
+		E85682AF1B6E744F00C47736 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PhoneDoodleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhoneDoodle.app/PhoneDoodle";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E85682821B6E744E00C47736 /* Build configuration list for PBXProject "PhoneDoodle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E85682A81B6E744F00C47736 /* Debug */,
+				E85682A91B6E744F00C47736 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E85682AA1B6E744F00C47736 /* Build configuration list for PBXNativeTarget "PhoneDoodle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E85682AB1B6E744F00C47736 /* Debug */,
+				E85682AC1B6E744F00C47736 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E85682AD1B6E744F00C47736 /* Build configuration list for PBXNativeTarget "PhoneDoodleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E85682AE1B6E744F00C47736 /* Debug */,
+				E85682AF1B6E744F00C47736 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E856827F1B6E744E00C47736 /* Project object */;
+}
