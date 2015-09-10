@@ -18,138 +18,112 @@
   <component name="DaemonCodeAnalyzer">
     <disable_hints />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos_df9510057a1aecb6389b1fcbbfd01b1cc112f740" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphoneos" />
   <component name="FavoritesManager">
     <favorites_list name="PhoneDoodle" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ViewController.m" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PhoneDoodle/ViewController.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="5640" max-vertical-offset="11940">
-              <caret line="376" column="1" selection-start-line="376" selection-start-column="1" selection-end-line="376" selection-end-column="1" />
-              <folding>
-                <marker date="1440621204000" expanded="true" signature="2576:5213" placeholder="^(NSArray *objects, NSError *error){...}" />
-                <marker date="1440621204000" expanded="true" signature="7043:7228" placeholder="^(MASConstraintMaker *make){...}" />
-                <marker date="1440621204000" expanded="true" signature="7332:7504" placeholder="^(MASConstraintMaker *make){...}" />
-                <marker date="1440621204000" expanded="true" signature="7586:7744" placeholder="^(MASConstraintMaker *make){...}" />
-                <marker date="1440621204000" expanded="true" signature="7847:8004" placeholder="^(MASConstraintMaker *make){...}" />
-                <marker date="1440621204000" expanded="true" signature="8077:8266" placeholder="^(MASConstraintMaker *make){...}" />
-                <marker date="1440621204000" expanded="true" signature="8329:8653" placeholder="^(MASConstraintMaker *make){...}" />
-                <marker date="1440621204000" expanded="true" signature="8726:8955" placeholder="^(MASConstraintMaker *make){...}" />
-                <marker date="1440621204000" expanded="true" signature="9028:9257" placeholder="^(MASConstraintMaker *make){...}" />
-                <marker date="1440621204000" expanded="true" signature="9632:9861" placeholder="^(MASConstraintMaker *make){...}" />
-                <marker date="1440621204000" expanded="true" signature="10278:10506" placeholder="^(MASConstraintMaker *make){...}" />
-                <marker date="1440621204000" expanded="true" signature="10581:10808" placeholder="^(MASConstraintMaker *make){...}" />
-                <marker date="1440621204000" expanded="true" signature="10883:11111" placeholder="^(MASConstraintMaker *make){...}" />
-                <marker date="1440621204000" expanded="true" signature="11190:11375" placeholder="^(MASConstraintMaker *make){...}" />
-                <marker date="1440621204000" expanded="true" signature="11452:11634" placeholder="^(MASConstraintMaker *make){...}" />
-                <marker date="1440621204000" expanded="true" signature="17762:17943" placeholder="^(BOOL succeeded, NSError *error){...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainMenuViewController.m" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PhoneDoodle/MainMenuViewController.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="600" max-vertical-offset="3645">
-              <caret line="40" column="19" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="YourGamesViewController.m" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PhoneDoodle/YourGamesViewController.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="5106" max-vertical-offset="5685">
-              <caret line="377" column="4" selection-start-line="377" selection-start-column="4" selection-end-line="377" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WritingViewController.m" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PhoneDoodle/WritingViewController.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="5721" max-vertical-offset="6330">
-              <caret line="415" column="0" selection-start-line="415" selection-start-column="0" selection-end-line="415" selection-end-column="0" />
-              <folding>
-                <element signature="e#156#189#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ShopViewController.m" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/PhoneDoodle/ShopViewController.m">
+        <entry file="file://$PROJECT_DIR$/PhoneDoodle/ViewControllers/ShopViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.61576355" vertical-offset="810" max-vertical-offset="1920">
-              <caret line="83" column="93" selection-start-line="83" selection-start-column="93" selection-end-line="83" selection-end-column="93" />
+            <state vertical-scroll-proportion="-4.267016" vertical-offset="2655" max-vertical-offset="5595">
+              <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainMenuViewController.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PhoneDoodle/MainMenuViewController.h">
+      <file leaf-file-name="BorderedButton.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PhoneDoodle/BorderedButton.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="240">
-              <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="52" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="630">
+              <caret line="33" column="38" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
               <folding>
-                <element signature="e#105#138#0" expanded="true" />
+                <element signature="e#105#131#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UIButton+DMButtonAttributes.m" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PhoneDoodle/UIButton+DMButtonAttributes.m">
+      <file leaf-file-name="ViewController.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PhoneDoodle/ViewControllers/ViewController.m">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="525">
-              <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="10782" max-vertical-offset="13410">
+              <caret line="756" column="5" selection-start-line="756" selection-start-column="5" selection-end-line="756" selection-end-column="5" />
+              <folding>
+                <marker date="1440990685000" expanded="true" signature="16912:35698" placeholder="..." />
+                <marker date="1440990685000" expanded="true" signature="2087:2111" placeholder="{...}" />
+                <marker date="1440990685000" expanded="true" signature="3498:6063" placeholder="^(NSArray *objects, NSError *error){...}" />
+                <marker date="1440990685000" expanded="true" signature="11175:11514" placeholder="^(MASConstraintMaker *make){...}" />
+                <marker date="1440990685000" expanded="true" signature="12385:13046" placeholder="^(MASConstraintMaker *make){...}" />
+                <marker date="1440990685000" expanded="true" signature="13138:13379" placeholder="^(MASConstraintMaker *make){...}" />
+                <marker date="1440990685000" expanded="true" signature="13445:13636" placeholder="^(MASConstraintMaker *make){...}" />
+                <marker date="1440990685000" expanded="true" signature="13777:13961" placeholder="^(MASConstraintMaker *make){...}" />
+                <marker date="1440990685000" expanded="true" signature="14307:14620" placeholder="^(MASConstraintMaker *make){...}" />
+                <marker date="1440990685000" expanded="true" signature="14733:14903" placeholder="^(MASConstraintMaker *make){...}" />
+                <marker date="1440990685000" expanded="true" signature="23960:24381" placeholder="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BorderedButton.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PhoneDoodle/BorderedButton.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding>
+                <element signature="e#105#138#0" expanded="true" />
+                <marker date="1440795433000" expanded="true" signature="200:202" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ColorPurchases.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PhoneDoodle/ColorPurchases.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1467" max-vertical-offset="2025">
+              <caret line="121" column="0" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
+              <folding>
+                <marker date="1440893539000" expanded="true" signature="164:3351" placeholder="..." />
+                <marker date="1440893539000" expanded="true" signature="292:407" placeholder="@[...]" />
+                <marker date="1440893539000" expanded="true" signature="3106:3169" placeholder="@[...]" />
+                <marker date="1440893539000" expanded="true" signature="3317:3350" placeholder="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ColorPurchases.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PhoneDoodle/ColorPurchases.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="450">
+              <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+              <folding>
+                <marker date="1440893427000" expanded="true" signature="177:536" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UIColor+DMHexColors.m" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PhoneDoodle/Categories/UIColor+DMHexColors.m">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+              <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="52" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UIButton+DMButtonAttributes.h" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PhoneDoodle/UIButton+DMButtonAttributes.h">
+      <file leaf-file-name="UIColor+DMHexColors.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/PhoneDoodle/Categories/UIColor+DMHexColors.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="255">
-              <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
-              <folding>
-                <element signature="e#105#138#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LogInViewController.m" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PhoneDoodle/LogInViewController.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2925" max-vertical-offset="4935">
-              <caret line="195" column="4" selection-start-line="195" selection-start-column="4" selection-end-line="195" selection-end-column="4" />
-              <folding>
-                <element signature="e#144#181#0" expanded="true" />
-                <marker date="1440084339000" expanded="true" signature="5605:7191" placeholder="^(PFUser *user, NSError *error){...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NewChainViewController.m" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/PhoneDoodle/NewChainViewController.m">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3315" max-vertical-offset="4455">
-              <caret line="221" column="5" selection-start-line="221" selection-start-column="5" selection-end-line="221" selection-end-column="5" />
-              <folding>
-                <element signature="e#105#139#0" expanded="true" />
-                <marker date="1440148006000" expanded="true" signature="1515:2338" placeholder="^(MASConstraintMaker *make){...}" />
-                <marker date="1440148006000" expanded="true" signature="5863:5895" placeholder="@[...]" />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -189,6 +163,13 @@
         <option value="$PROJECT_DIR$/PhoneDoodle/YourGamesViewController.m" />
         <option value="$PROJECT_DIR$/PhoneDoodle/WritingViewController.m" />
         <option value="$PROJECT_DIR$/PhoneDoodle/ShopViewController.m" />
+        <option value="$PROJECT_DIR$/PhoneDoodle/UIButton+DMCustomButtonHighlight.m" />
+        <option value="$PROJECT_DIR$/PhoneDoodle/UIButton+DMCustomButtonHighlight.h" />
+        <option value="$PROJECT_DIR$/PhoneDoodle/BorderedButton.m" />
+        <option value="$PROJECT_DIR$/PhoneDoodle/ViewControllers/ViewController.m" />
+        <option value="$PROJECT_DIR$/PhoneDoodle/ColorPurchases.m" />
+        <option value="$PROJECT_DIR$/PhoneDoodle/ColorPurchases.h" />
+        <option value="$PROJECT_DIR$/PhoneDoodle/ViewControllers/ShopViewController.m" />
       </list>
     </option>
   </component>
@@ -196,9 +177,10 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1280" />
-    <option name="height" value="732" />
+    <option name="x" value="80" />
+    <option name="y" value="41" />
+    <option name="width" value="1024" />
+    <option name="height" value="696" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -223,9 +205,18 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Cidr.FilesView" />
       <pane id="ProjectPane">
         <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeRootNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PhoneDoodle" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.XcodeProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" />
@@ -410,6 +401,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Cidr.FilesView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -468,7 +460,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="732" extended-state="6" />
+    <frame x="80" y="41" width="1024" height="696" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -477,20 +469,20 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32967034" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -514,198 +506,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/PhoneDoodle/ViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="5235" max-vertical-offset="10905">
-          <caret line="349" column="1" selection-start-line="349" selection-start-column="1" selection-end-line="349" selection-end-column="1" />
-          <folding>
-            <marker date="1440621204000" expanded="true" signature="2576:5213" placeholder="^(NSArray *objects, NSError *error){...}" />
-            <marker date="1440621204000" expanded="true" signature="7043:7228" placeholder="^(MASConstraintMaker *make){...}" />
-            <marker date="1440621204000" expanded="true" signature="7332:7504" placeholder="^(MASConstraintMaker *make){...}" />
-            <marker date="1440621204000" expanded="true" signature="7586:7744" placeholder="^(MASConstraintMaker *make){...}" />
-            <marker date="1440621204000" expanded="true" signature="7847:8004" placeholder="^(MASConstraintMaker *make){...}" />
-            <marker date="1440621204000" expanded="true" signature="8077:8266" placeholder="^(MASConstraintMaker *make){...}" />
-            <marker date="1440621204000" expanded="true" signature="8329:8653" placeholder="^(MASConstraintMaker *make){...}" />
-            <marker date="1440621204000" expanded="true" signature="8726:8955" placeholder="^(MASConstraintMaker *make){...}" />
-            <marker date="1440621204000" expanded="true" signature="9028:9257" placeholder="^(MASConstraintMaker *make){...}" />
-            <marker date="1440621204000" expanded="true" signature="9632:9861" placeholder="^(MASConstraintMaker *make){...}" />
-            <marker date="1440621204000" expanded="true" signature="10278:10506" placeholder="^(MASConstraintMaker *make){...}" />
-            <marker date="1440621204000" expanded="true" signature="10581:10808" placeholder="^(MASConstraintMaker *make){...}" />
-            <marker date="1440621204000" expanded="true" signature="10883:11111" placeholder="^(MASConstraintMaker *make){...}" />
-            <marker date="1440621204000" expanded="true" signature="11190:11375" placeholder="^(MASConstraintMaker *make){...}" />
-            <marker date="1440621204000" expanded="true" signature="11452:11634" placeholder="^(MASConstraintMaker *make){...}" />
-            <marker date="1440621204000" expanded="true" signature="17762:17943" placeholder="^(BOOL succeeded, NSError *error){...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PhoneDoodle/MainMenuViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="525" max-vertical-offset="3240">
-          <caret line="35" column="19" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PhoneDoodle/YourGamesViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PhoneDoodle/WritingViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="5040" max-vertical-offset="5250">
-          <caret line="336" column="4" selection-start-line="336" selection-start-column="4" selection-end-line="336" selection-end-column="4" />
-          <folding>
-            <element signature="e#156#189#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PhoneDoodle/MainMenuViewController.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="240">
-          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="52" />
-          <folding>
-            <element signature="e#105#138#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PhoneDoodle/AppDelegate.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="585" max-vertical-offset="1350">
-          <caret line="39" column="52" selection-start-line="39" selection-start-column="52" selection-end-line="39" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PhoneDoodle/UIButton+DMButtonAttributes.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="525">
-          <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PhoneDoodle/UIButton+DMButtonAttributes.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="255">
-          <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
-          <folding>
-            <element signature="e#105#138#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PhoneDoodle/LogInViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2925" max-vertical-offset="4935">
-          <caret line="195" column="4" selection-start-line="195" selection-start-column="4" selection-end-line="195" selection-end-column="4" />
-          <folding>
-            <element signature="e#144#181#0" expanded="true" />
-            <marker date="1440084339000" expanded="true" signature="5605:7191" placeholder="^(PFUser *user, NSError *error){...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PhoneDoodle/NewChainViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3315" max-vertical-offset="4455">
-          <caret line="221" column="5" selection-start-line="221" selection-start-column="5" selection-end-line="221" selection-end-column="5" />
-          <folding>
-            <element signature="e#105#139#0" expanded="true" />
-            <marker date="1440148006000" expanded="true" signature="1515:2338" placeholder="^(MASConstraintMaker *make){...}" />
-            <marker date="1440148006000" expanded="true" signature="5863:5895" placeholder="@[...]" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PhoneDoodle/ViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1440621204000" expanded="true" signature="2576:5213" placeholder="^(NSArray *objects, NSError *error){...}" />
-            <marker date="1440621204000" expanded="true" signature="7043:7228" placeholder="^(MASConstraintMaker *make){...}" />
-            <marker date="1440621204000" expanded="true" signature="7332:7504" placeholder="^(MASConstraintMaker *make){...}" />
-            <marker date="1440621204000" expanded="true" signature="7586:7744" placeholder="^(MASConstraintMaker *make){...}" />
-            <marker date="1440621204000" expanded="true" signature="7847:8004" placeholder="^(MASConstraintMaker *make){...}" />
-            <marker date="1440621204000" expanded="true" signature="8077:8266" placeholder="^(MASConstraintMaker *make){...}" />
-            <marker date="1440621204000" expanded="true" signature="8329:8653" placeholder="^(MASConstraintMaker *make){...}" />
-            <marker date="1440621204000" expanded="true" signature="8726:8955" placeholder="^(MASConstraintMaker *make){...}" />
-            <marker date="1440621204000" expanded="true" signature="9028:9257" placeholder="^(MASConstraintMaker *make){...}" />
-            <marker date="1440621204000" expanded="true" signature="9632:9861" placeholder="^(MASConstraintMaker *make){...}" />
-            <marker date="1440621204000" expanded="true" signature="10278:10506" placeholder="^(MASConstraintMaker *make){...}" />
-            <marker date="1440621204000" expanded="true" signature="10581:10808" placeholder="^(MASConstraintMaker *make){...}" />
-            <marker date="1440621204000" expanded="true" signature="10883:11111" placeholder="^(MASConstraintMaker *make){...}" />
-            <marker date="1440621204000" expanded="true" signature="11190:11375" placeholder="^(MASConstraintMaker *make){...}" />
-            <marker date="1440621204000" expanded="true" signature="11452:11634" placeholder="^(MASConstraintMaker *make){...}" />
-            <marker date="1440621204000" expanded="true" signature="17762:17943" placeholder="^(BOOL succeeded, NSError *error){...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PhoneDoodle/ViewController.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="375">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PhoneDoodle/LogInViewController.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="255">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PhoneDoodle/LogInViewModel.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
-          <caret line="17" column="2" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PhoneDoodle/NSObject+BTRACAdditions.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="225">
-          <caret line="8" column="76" selection-start-line="8" selection-start-column="76" selection-end-line="8" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PhoneDoodle/NSObject+BTRACAdditions.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="96" max-vertical-offset="705">
-          <caret line="16" column="77" selection-start-line="16" selection-start-column="77" selection-end-line="16" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PhoneDoodle/LogInViewModel.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="720">
-          <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PhoneDoodle/WelcomePageViewController.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
-          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PhoneDoodle/WelcomePageViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="330">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Pods/Headers/Public/ACEDrawingView/ACEDrawingView.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="906" max-vertical-offset="1515">
@@ -720,163 +520,90 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PhoneDoodle/NewChainViewController.h">
+    <entry file="file://$PROJECT_DIR$/PhoneDoodle/Categories/UIColor+DMHexColors.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
-          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="607">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PhoneDoodle/ViewController.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
-          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PhoneDoodle/UIColor+DMHexColors.m">
+    <entry file="file://$PROJECT_DIR$/PhoneDoodle/Categories/UIColor+DMHexColors.m">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-          <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PhoneDoodle/UIColor+DMHexColors.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="285">
-          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PhoneDoodle/AppDelegate.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="495" max-vertical-offset="1350">
-          <caret line="39" column="52" selection-start-line="39" selection-start-column="52" selection-end-line="39" selection-end-column="52" />
+          <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="52" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PhoneDoodle/UIButton+DMButtonAttributes.h">
+    <entry file="file://$PROJECT_DIR$/PhoneDoodle/BorderedButton.h">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
-          <caret line="9" column="39" selection-start-line="9" selection-start-column="39" selection-end-line="9" selection-end-column="39" />
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
             <element signature="e#105#138#0" expanded="true" />
+            <marker date="1440795433000" expanded="true" signature="200:202" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PhoneDoodle/UIButton+DMButtonAttributes.m">
+    <entry file="file://$PROJECT_DIR$/PhoneDoodle/BorderedButton.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="525">
-          <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PhoneDoodle/LogInViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2676" max-vertical-offset="4935">
-          <caret line="195" column="4" selection-start-line="195" selection-start-column="4" selection-end-line="195" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="57" max-vertical-offset="630">
+          <caret line="33" column="38" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
           <folding>
-            <element signature="e#144#181#0" expanded="true" />
-            <marker date="1440084339000" expanded="true" signature="5605:7191" placeholder="^(PFUser *user, NSError *error){...}" />
+            <element signature="e#105#131#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PhoneDoodle/NewChainViewController.m">
+    <entry file="file://$PROJECT_DIR$/PhoneDoodle/ViewControllers/ViewController.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1170" max-vertical-offset="4455">
-          <caret line="221" column="5" selection-start-line="221" selection-start-column="5" selection-end-line="221" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="10782" max-vertical-offset="13410">
+          <caret line="756" column="5" selection-start-line="756" selection-start-column="5" selection-end-line="756" selection-end-column="5" />
           <folding>
-            <element signature="e#105#139#0" expanded="true" />
-            <marker date="1440148006000" expanded="true" signature="1515:2338" placeholder="^(MASConstraintMaker *make){...}" />
-            <marker date="1440148006000" expanded="true" signature="5863:5895" placeholder="@[...]" />
+            <marker date="1440990685000" expanded="true" signature="16912:35698" placeholder="..." />
+            <marker date="1440990685000" expanded="true" signature="2087:2111" placeholder="{...}" />
+            <marker date="1440990685000" expanded="true" signature="3498:6063" placeholder="^(NSArray *objects, NSError *error){...}" />
+            <marker date="1440990685000" expanded="true" signature="11175:11514" placeholder="^(MASConstraintMaker *make){...}" />
+            <marker date="1440990685000" expanded="true" signature="12385:13046" placeholder="^(MASConstraintMaker *make){...}" />
+            <marker date="1440990685000" expanded="true" signature="13138:13379" placeholder="^(MASConstraintMaker *make){...}" />
+            <marker date="1440990685000" expanded="true" signature="13445:13636" placeholder="^(MASConstraintMaker *make){...}" />
+            <marker date="1440990685000" expanded="true" signature="13777:13961" placeholder="^(MASConstraintMaker *make){...}" />
+            <marker date="1440990685000" expanded="true" signature="14307:14620" placeholder="^(MASConstraintMaker *make){...}" />
+            <marker date="1440990685000" expanded="true" signature="14733:14903" placeholder="^(MASConstraintMaker *make){...}" />
+            <marker date="1440990685000" expanded="true" signature="23960:24381" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PhoneDoodle/ViewController.m">
+    <entry file="file://$PROJECT_DIR$/PhoneDoodle/ColorPurchases.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="5640" max-vertical-offset="11940">
-          <caret line="376" column="1" selection-start-line="376" selection-start-column="1" selection-end-line="376" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1467" max-vertical-offset="2025">
+          <caret line="121" column="0" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
           <folding>
-            <marker date="1440621204000" expanded="true" signature="2576:5213" placeholder="^(NSArray *objects, NSError *error){...}" />
-            <marker date="1440621204000" expanded="true" signature="7043:7228" placeholder="^(MASConstraintMaker *make){...}" />
-            <marker date="1440621204000" expanded="true" signature="7332:7504" placeholder="^(MASConstraintMaker *make){...}" />
-            <marker date="1440621204000" expanded="true" signature="7586:7744" placeholder="^(MASConstraintMaker *make){...}" />
-            <marker date="1440621204000" expanded="true" signature="7847:8004" placeholder="^(MASConstraintMaker *make){...}" />
-            <marker date="1440621204000" expanded="true" signature="8077:8266" placeholder="^(MASConstraintMaker *make){...}" />
-            <marker date="1440621204000" expanded="true" signature="8329:8653" placeholder="^(MASConstraintMaker *make){...}" />
-            <marker date="1440621204000" expanded="true" signature="8726:8955" placeholder="^(MASConstraintMaker *make){...}" />
-            <marker date="1440621204000" expanded="true" signature="9028:9257" placeholder="^(MASConstraintMaker *make){...}" />
-            <marker date="1440621204000" expanded="true" signature="9632:9861" placeholder="^(MASConstraintMaker *make){...}" />
-            <marker date="1440621204000" expanded="true" signature="10278:10506" placeholder="^(MASConstraintMaker *make){...}" />
-            <marker date="1440621204000" expanded="true" signature="10581:10808" placeholder="^(MASConstraintMaker *make){...}" />
-            <marker date="1440621204000" expanded="true" signature="10883:11111" placeholder="^(MASConstraintMaker *make){...}" />
-            <marker date="1440621204000" expanded="true" signature="11190:11375" placeholder="^(MASConstraintMaker *make){...}" />
-            <marker date="1440621204000" expanded="true" signature="11452:11634" placeholder="^(MASConstraintMaker *make){...}" />
-            <marker date="1440621204000" expanded="true" signature="17762:17943" placeholder="^(BOOL succeeded, NSError *error){...}" />
+            <marker date="1440893539000" expanded="true" signature="164:3351" placeholder="..." />
+            <marker date="1440893539000" expanded="true" signature="292:407" placeholder="@[...]" />
+            <marker date="1440893539000" expanded="true" signature="3106:3169" placeholder="@[...]" />
+            <marker date="1440893539000" expanded="true" signature="3317:3350" placeholder="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PhoneDoodle/SettingsViewController.m">
+    <entry file="file://$PROJECT_DIR$/PhoneDoodle/ColorPurchases.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1536" max-vertical-offset="2145">
-          <caret line="137" column="0" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PhoneDoodle/SettingsViewController.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19704433" vertical-offset="0" max-vertical-offset="609">
-          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PhoneDoodle/MainMenuViewController.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="240">
-          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="52" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="450">
+          <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
           <folding>
-            <element signature="e#105#138#0" expanded="true" />
+            <marker date="1440893427000" expanded="true" signature="177:536" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PhoneDoodle/MainMenuViewController.m">
+    <entry file="file://$PROJECT_DIR$/PhoneDoodle/ViewControllers/ShopViewController.m">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="600" max-vertical-offset="3645">
-          <caret line="40" column="19" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PhoneDoodle/YourGamesViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="5106" max-vertical-offset="5685">
-          <caret line="377" column="4" selection-start-line="377" selection-start-column="4" selection-end-line="377" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PhoneDoodle/WritingViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="5721" max-vertical-offset="6330">
-          <caret line="415" column="0" selection-start-line="415" selection-start-column="0" selection-end-line="415" selection-end-column="0" />
-          <folding>
-            <element signature="e#156#189#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PhoneDoodle/ShopViewController.m">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61576355" vertical-offset="810" max-vertical-offset="1920">
-          <caret line="83" column="93" selection-start-line="83" selection-start-column="93" selection-end-line="83" selection-end-column="93" />
+        <state vertical-scroll-proportion="-4.267016" vertical-offset="2655" max-vertical-offset="5595">
+          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
           <folding />
         </state>
       </provider>

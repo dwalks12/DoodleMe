@@ -43,12 +43,13 @@
 }
 
 -(void)checkGames{
-    NSLog(@"checkGames");
     [self.activityIndicatorView startAnimating];
+     //NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:5.0f target:self selector:@selector(errorHandler) userInfo:nil repeats:NO];
     PFQuery *query = [PFQuery queryWithClassName:@"Game"];
     [query orderByDescending:@"updatedAt"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if(!error){
+            //[timer invalidate];
             if(objects.count == 0){
                 [self.activityIndicatorView stopAnimating];
             }
@@ -68,7 +69,7 @@
                 }
                 
             }
-            NSLog(@"yourGames Count = %lu", (unsigned long)self.yourGames.count);
+            
             //[self.gmGridView reloadData];
             //[self.view addSubview:self.gmGridView];
             [self defineLayouts];
@@ -76,13 +77,22 @@
            
             
         }
+        else{
+            [self backToMain];
+        }
         
     }];
     
     
 }
+-(void)errorHandler{
+    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Sorry!" message:@"Please make sure you are connected to the internet" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
+    alertView.delegate = self;
+    [alertView show];
+    [self backToMain];
+}
 -(void)attachImages{
-    NSLog(@"attachImages");
+    
     self.imagesArray = [[NSMutableArray alloc]initWithCapacity:self.yourGames.count];
     UIImageView *loadingImages = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, (self.view.frame.size.width-45)/2, (self.view.frame.size.width-45)/2)];
     UIActivityIndicatorView *activityInd = [[UIActivityIndicatorView alloc]initWithFrame:CGRectMake(self.view.frame.size.width/4, self.view.frame.size.width/4, self.view.frame.size.width/4, self.view.frame.size.width/4)];
@@ -91,12 +101,15 @@
     [activityInd setHidesWhenStopped:YES];
     [activityInd startAnimating];
     [loadingImages addSubview:activityInd];
-    
+    if(self.yourGames.count == 0){
+        [self.activityIndicatorView stopAnimating];
+        self.activityIndicatorView.hidden = YES;
+    }
     for(int i = 0;i<self.yourGames.count;i++){
         [self.imagesArray addObject:loadingImages];
     }
     for(int l = 0;l<self.yourGames.count; l ++){
-        NSLog(@"what?");
+       // NSLog(@"what?");
         NSMutableArray *array = [NSMutableArray arrayWithArray:[self.yourGames[l] valueForKey:@"imagesArray"]];
         NSMutableArray *arrayOfText = [NSMutableArray arrayWithArray:[self.yourGames[l]valueForKey:@"sentText"]];
         [self.textArray addObject:arrayOfText[0]];
@@ -107,7 +120,7 @@
             //NSLog(@"imageFile = %@",imageFile);
             PFImageView *imageView = [[PFImageView alloc]init];
             imageView.file = imageFile;
-            NSLog(@"HELLO");
+           // NSLog(@"HELLO");
             [imageView loadInBackground:^(UIImage *img, NSError *error){
                 UIImageView *imageReplacement = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, (self.view.frame.size.width-45)/2, (self.view.frame.size.width-45)/2)];
                 imageReplacement.image = img;
@@ -255,11 +268,10 @@
 
 - (void)GMGridView:(GMGridView *)gridView didTapOnItemAtIndex:(NSInteger)position
 {
-    NSLog(@"tapped the grid");
-    NSLog(@"yourgames = %@", self.yourGames[position]);
+   // NSLog(@"yourgames = %@", self.yourGames[position]);
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     appDelegate.gameArray = self.yourGames[position];
-    NSLog(@"%@", appDelegate.gameArray);
+    //NSLog(@"%@", appDelegate.gameArray);
     SelectedGameViewController *viewController = [SelectedGameViewController new];
     [self presentViewController:viewController animated:YES completion:nil];
     //Advance to that thread...
@@ -270,7 +282,7 @@
 
 - (void)GMGridViewDidTapOnEmptySpace:(GMGridView *)gridView
 {
-    NSLog(@"Tap on empty space");
+   
 }
 
 - (void)GMGridView:(GMGridView *)gridView processDeleteActionForItemAtIndex:(NSInteger)index
@@ -307,7 +319,7 @@
     if (!_titleLabel) {
         _titleLabel = [UILabel new];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
-        _titleLabel.font = [UIFont fontWithName:@"BubblegumSans-Regular" size:50];
+        _titleLabel.font = [UIFont fontWithName:@"BubblegumSans-Regular" size:40];
         _titleLabel.textColor = [UIColor bt_colorWithHexValue:0xFFFFFF alpha:1.0f];
         _titleLabel.text = @"Your Games";
         _titleLabel.minimumScaleFactor = 0.5;

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "311715006FD262F9155AFBF7"
+               BlueprintIdentifier = "6BA07445AF601D3C0BAE5FD9"
                BuildableName = "libACEDrawingView.a"
                BlueprintName = "ACEDrawingView"
                ReferencedContainer = "container:Pods.xcodeproj">

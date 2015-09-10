@@ -17,7 +17,9 @@
 #import "YourGamesViewController.h"
 
 
-@interface SelectedGameViewController ()<GMGridViewActionDelegate,GMGridViewDataSource>
+@interface SelectedGameViewController ()<GMGridViewActionDelegate,GMGridViewDataSource,UIAlertViewDelegate>{
+    BOOL reportedUser;
+}
 @property (nonatomic, strong) UIActivityIndicatorView *activityIndicatorView;
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UIImageView *bannerBackground;
@@ -27,6 +29,11 @@
 @property (nonatomic, strong) NSMutableArray *textArray;
 @property (nonatomic, strong) NSMutableArray *imagesArray;
 @property (nonatomic, strong) NSMutableArray *nameArray;
+@property (nonatomic, strong) UIView *opacityView;
+@property (nonatomic, strong) UIImageView *boxView;
+@property (nonatomic, strong) UIButton *reportButton;
+@property (nonatomic, strong) UILabel *userLabel;
+@property (nonatomic, strong) NSString *reportedPlayer;
 
 @end
 
@@ -40,6 +47,7 @@
     numberOfRounds = 0;
     counter = 1;
     secondCounter = 1;
+    reportedUser = NO;
     self.backgroundView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     self.activityIndicatorView.frame = CGRectMake(self.view.frame.size.width/2 - self.activityIndicatorView.frame.size.width/2, self.view.frame.size.height/2 - self.activityIndicatorView.frame.size.height/2, self.activityIndicatorView.frame.size.width, self.activityIndicatorView.frame.size.height);
     [self addSubviews];
@@ -51,8 +59,7 @@
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSNumber *count = [appDelegate.gameArray valueForKey:@"chainLength"];
     numberOfRounds = [count intValue];
-    NSLog(@"rounds = %d", numberOfRounds);
-    UIImageView *loadingImages = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, (self.view.frame.size.width-45)/2, (self.view.frame.size.width-45)/2)];
+       UIImageView *loadingImages = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, (self.view.frame.size.width-45)/2, (self.view.frame.size.width-45)/2)];
     UIActivityIndicatorView *activityInd = [[UIActivityIndicatorView alloc]initWithFrame:CGRectMake((self.view.frame.size.width-45)/4 - self.activityIndicatorView.frame.size.width/2, (self.view.frame.size.width-45)/4 - self.activityIndicatorView.frame.size.height/2, self.activityIndicatorView.frame.size.width, self.activityIndicatorView.frame.size.height)];
     activityInd.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
     [activityInd setColor:[UIColor colorWithRed:1.0 green:0.4 blue:0.3 alpha:1.0]];
@@ -64,12 +71,14 @@
     for(int i = 0;i<array.count;i++){
         
         [self.imagesArray addObject:loadingImages];
+       // NSLog(@"images array = %lu",(unsigned long)self.imagesArray.count);
+        
     }
     self.textArray = [appDelegate.gameArray valueForKey:@"sentText"];
     self.nameArray = [appDelegate.gameArray valueForKey:@"usersInvolved"];
     [self defineLayouts];
     NSMutableArray *imageTempArray = self.imagesArray;
-    NSLog(@"imageTemp Array = %@ ", imageTempArray);
+   // NSLog(@"imageTemp Array = %@ ", imageTempArray);
     
     for(int l = 0;l<array.count; l ++){
        
@@ -80,7 +89,7 @@
             //NSLog(@"imageFile = %@",imageFile);
             PFImageView *imageView = [[PFImageView alloc]init];
             imageView.file = imageFile;
-            NSLog(@"You make it here fine");
+           // NSLog(@"You make it here fine");
             
             [imageView loadInBackground:^(UIImage *img, NSError *error){
                 if(!error){
@@ -126,7 +135,14 @@
     [self presentViewController:viewController animated:YES completion:nil];
 }
 
-
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
+    if(reportedUser){
+        [self.reportButton removeFromSuperview];
+        [self.boxView removeFromSuperview];
+        [self.opacityView removeFromSuperview];
+        [self.userLabel removeFromSuperview];
+    }
+}
 #pragma mark GMGridViewDataSource
 
 
@@ -140,6 +156,9 @@
 - (NSInteger)numberOfItemsInGMGridView:(GMGridView *)gridView
 {
     //return the count of things
+    NSLog(@"number of Rounds = %i",numberOfRounds);
+    counter = 1;
+    secondCounter = 1;
     return numberOfRounds;
     
 }
@@ -155,11 +174,15 @@
 
 - (GMGridViewCell *)GMGridView:(GMGridView *)gridView cellForItemAtIndex:(NSInteger)index
 {
-    
+    NSLog(@"index = %li",(long)index);
+    NSLog(@"second counter = %i",secondCounter);
+    NSLog(@"counter = %i",counter);
+    NSLog(@"index - counter = %li",index - counter);
+    NSLog(@"index - secondCounter = %li",index - secondCounter);
     //cell.selectionStyle = AQGridViewCellSelectionStyleGlow;
     CGSize size = [self GMGridView:gridView sizeForItemsInInterfaceOrientation:[[UIApplication sharedApplication] statusBarOrientation]];
     
-    NSLog(@"making sure its here");
+   
     GMGridViewCell* cell = [[GMGridViewCell alloc] initWithFrame:CGRectMake(0, 200, size.width, size.height)];
     UIView *theView =[[UIView alloc]initWithFrame:CGRectMake(0, 200, size.width, size.height)];
     theView.backgroundColor = [UIColor clearColor];
@@ -173,6 +196,7 @@
         
         UILabel *textLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, cell.frame.size.width, cell.frame.size.width)];
         if(index != 0){
+            //NSLog(@"%@ text",self.textArray[index-secondCounter]);
             textLabel.text = [NSString stringWithFormat:@"%@",self.textArray[index-secondCounter]];
             secondCounter ++;
         }
@@ -213,23 +237,7 @@
         counter = 1;
         secondCounter = 1;
     }
-    /*
-     
-    UIImageView *imgvew = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, cell.frame.size.width, cell.frame.size.width)];
-    imgvew = self.imagesArray[index];
-    UILabel *textLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, cell.frame.size.width, cell.frame.size.width, 60)];
-    textLabel.text = [NSString stringWithFormat:@"%@",self.textArray[index]];
-    textLabel.font = [UIFont fontWithName:@"BubblegumSans-Regular" size:28];
-    textLabel.minimumScaleFactor = 0.2;
-    textLabel.adjustsFontSizeToFitWidth = YES;
-    [cell addSubview:imgvew];
-    [cell addSubview:textLabel];
     
-    cell.layer.cornerRadius = 3;
-    cell.layer.masksToBounds = YES;
-    
-    
-    */
     
     
     
@@ -248,9 +256,88 @@
 //////////////////////////////////////////////////////////////
 #pragma mark GMGridViewActionDelegate
 //////////////////////////////////////////////////////////////
+-(void)reportUser{
+    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Report" message:[NSString stringWithFormat:@"Are you sure you want to report %@ for inappropriate content?",self.reportedPlayer] delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Report", nil];
+    [alert show];
+}
 
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if(buttonIndex == 0){
+        [self.opacityView removeFromSuperview];
+        [self.boxView removeFromSuperview];
+        [self.reportButton removeFromSuperview];
+        [self.userLabel removeFromSuperview];
+        self.reportedPlayer = nil;
+    }
+    else{
+        PFObject *message = [PFObject objectWithClassName:@"ReportedUsers"];
+        [message setObject:self.reportedPlayer forKey:@"reportedUser"];
+        [message setObject:[PFUser currentUser].username forKey:@"userThatReported"];
+        
+        [message saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if(!error){
+                UIAlertView *alert2 = [[UIAlertView alloc]initWithTitle:@"Report" message:@"Your report has been sent" delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+                [alert2 show];
+            }
+        }];
+        
+    }
+    
+}
 - (void)GMGridView:(GMGridView *)gridView didTapOnItemAtIndex:(NSInteger)position
 {
+    reportedUser = YES;
+    self.opacityView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    self.opacityView.backgroundColor = [UIColor colorWithRed:240.0f/255.0f green:230.0f/255.0f blue:200.0f/255.0f alpha:0.6];
+    
+    self.boxView = [[UIImageView alloc]init];
+    self.boxView.backgroundColor = [UIColor bt_colorWithHexValue:0x5AC8FA];
+    self.boxView.layer.cornerRadius = 10.0f;
+    self.boxView.layer.masksToBounds = YES;
+    
+    self.reportButton = [[UIButton alloc]init];
+    self.reportButton.backgroundColor = [UIColor redColor];
+    [self.reportButton setTitle:@"Report inappropriate content" forState:UIControlStateNormal];
+    self.reportButton.titleLabel.font = [UIFont fontWithName:@"BubblegumSans-Regular" size:22];
+    self.reportButton.titleLabel.textAlignment = NSTextAlignmentCenter;
+    self.reportButton.titleLabel.adjustsFontSizeToFitWidth = YES;
+    self.reportButton.titleLabel.minimumScaleFactor = 0.4;
+    self.reportButton.layer.cornerRadius = 10.0f;
+    self.reportButton.layer.masksToBounds = YES;
+    [self.reportButton addTarget:self action:@selector(reportUser) forControlEvents:UIControlEventTouchUpInside];
+    self.userLabel = [[UILabel alloc]init];
+    self.userLabel.textAlignment = NSTextAlignmentCenter;
+    self.userLabel.text = [NSString stringWithFormat:@"%@'s drawing/writing",self.nameArray[position]];
+    self.userLabel.font = [UIFont fontWithName:@"BubblegumSans-Regular" size:22];
+    self.userLabel.adjustsFontSizeToFitWidth = YES;
+    self.userLabel.minimumScaleFactor = 0.4;
+    self.userLabel.textColor = [UIColor whiteColor];
+    
+    [self.view addSubview:self.opacityView];
+    [self.view addSubview:self.boxView];
+    [self.view addSubview:self.reportButton];
+    [self.view addSubview:self.userLabel];
+    
+    [self.boxView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view);
+        make.centerY.equalTo(self.view);
+        make.width.equalTo(self.view).offset(-40.0f);
+        make.height.equalTo(@200);
+    }];
+    
+    [self.reportButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view);
+        make.centerY.equalTo(self.boxView);
+        make.width.equalTo(self.boxView).offset(-20.0f);
+        make.height.equalTo(@45);
+    }];
+    [self.userLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view);
+        make.bottom.equalTo(self.reportButton.mas_top).offset(-30.0f);
+        make.width.equalTo(self.reportButton);
+        make.height.equalTo(self.reportButton);
+    }];
+    self.reportedPlayer = [NSString stringWithFormat:@"%@",self.nameArray[position]];
     //AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     //appDelegate.gameArray = [NSArray arrayWithArray:self.yourGames[position]];
     
@@ -264,7 +351,7 @@
 
 - (void)GMGridViewDidTapOnEmptySpace:(GMGridView *)gridView
 {
-    NSLog(@"Tap on empty space");
+  
 }
 
 - (void)GMGridView:(GMGridView *)gridView processDeleteActionForItemAtIndex:(NSInteger)index
@@ -276,14 +363,7 @@
     //_lastDeleteItemIndexAsked = index;
 }
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if (buttonIndex == 1)
-    {
-        // [_currentData removeObjectAtIndex:_lastDeleteItemIndexAsked];
-        //[_gmGridView removeObjectAtIndex:_lastDeleteItemIndexAsked withAnimation:GMGridViewItemAnimationFade];
-    }
-}
+
 
 
 
@@ -389,6 +469,7 @@
         _gmGridView.centerGrid = NO;
         _gmGridView.dataSource = self;
         _gmGridView.scrollEnabled = YES;
+        _gmGridView.actionDelegate = self;
     }
     return _gmGridView;
 }

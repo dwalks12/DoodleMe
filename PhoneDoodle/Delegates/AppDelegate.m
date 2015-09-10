@@ -12,7 +12,10 @@
 #import "LogInViewController.h"
 #import "MainMenuViewController.h"
 #import <Parse/Parse.h>
-#import "NewChainViewController.h"
+#import <VungleSDK/VungleSDK.h>
+#import <StartApp/StartApp.h>
+
+
 
 #define ROOTVIEW [[[UIApplication sharedApplication] keyWindow] rootViewController]
 @interface AppDelegate ()
@@ -23,9 +26,16 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [NSThread sleepForTimeInterval:2];
     // Override point for customization after application launch.
     //ViewController *viewController = [ViewController new];
-    
+    STAStartAppSDK* sdk = [STAStartAppSDK sharedInstance];
+    sdk.appID = @"207921218";
+    NSString* appID = @"com.RiseDigital.PhoneDoodle";
+    VungleSDK* sdk2 = [VungleSDK sharedSDK];
+    // start vungle publisher library
+    [sdk2 startWithAppId:appID];
+    [[VungleSDK sharedSDK] setDelegate:nil];
     // Initialize Parse.
     [Parse setApplicationId:@"kbBkwkM3GCxCZrHxiFg4gikIiHG6hO04fVN30tRw"
                   clientKey:@"kgk8vBjiex1oJ0LV7vRlkJbChoS6htBgFJTlxUAI"];

@@ -15,6 +15,8 @@
 #import "AppDelegate.h"
 #import "WritingViewController.h"
 #import "UIColor+DMHexColors.h"
+#import "BorderedButton.h"
+#import "ColorPurchases.h"
 
 @interface ViewController ()<ACEDrawingViewDelegate,UIAlertViewDelegate, UIScrollViewDelegate>
 @property (strong, nonatomic) ACEDrawingView *drawingView;
@@ -43,18 +45,24 @@
 @property (nonatomic, strong) UILabel *titleLabel;
 @property (nonatomic, strong) UIImageView *bannerBackground;
 @property (nonatomic, strong) UIButton *backButton;
+@property (nonatomic, strong) NSMutableArray *arrayOfColorButtons;
+
 @end
 
 @implementation ViewController {
     int attempts;
-    int numberOfColors;
+    int long numberOfColors;
     float colorWidth;
 }
 
 - (void)viewDidLoad {
     //[super viewDidLoad];
+    
     colorWidth = (self.view.frame.size.width - 60)/11;
-    numberOfColors = 12;
+    NSArray *countOfOwnedColors = [NSArray arrayWithArray:[[PFUser currentUser]objectForKey:@"purchased"]];
+    //NSLog(@"countof colors = %lu",countOfOwnedColors.count);
+    numberOfColors = 12 + (countOfOwnedColors.count *5);
+    
     attempts = 0;
     self.activityIndicatorView.frame = CGRectMake(self.view.frame.size.width/2 - self.activityIndicatorView.frame.size.width/2, self.view.frame.size.height/2 - self.activityIndicatorView.frame.size.height/2  , self.activityIndicatorView.frame.size.width, self.activityIndicatorView.frame.size.width);
     self.backgroundColor.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
@@ -67,11 +75,14 @@
     [self checkGames];
 }
 -(void)checkGames{
+    //NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:5.0f target:self selector:@selector(errorHandler) userInfo:nil repeats:NO];
+
     PFQuery * query = [PFQuery queryWithClassName:@"Game"];
     [query orderByDescending:@"updatedAt"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if(!error){
            // NSLog(@"%@",objects);
+           // [timer invalidate];
             NSUInteger randomIndex = arc4random() % [objects count];
             
             NSMutableArray *array = [NSMutableArray arrayWithArray:
@@ -91,7 +102,6 @@
                 NSMutableArray *check = [NSMutableArray arrayWithObject:objects[randomIndex]];
                 self.gameArray = [NSArray arrayWithArray:check];
                 if([[self.gameArray[0] valueForKey:@"whatsNext"]isEqualToString:@"drawing"]){
-                   NSLog(@"GO TO DRAWING VIEW YOU HAVE THE LATEST DESCRIPTION");
                     
                     NSMutableArray *textArray = [self.gameArray[0] valueForKey:@"sentText"];
                     
@@ -99,10 +109,10 @@
                     
                     [self addSubviews];
                     [self defineLayouts];
+                    [self addPurchasedColors];
                     
                 }
                 else if([[self.gameArray[0] valueForKey:@"whatsNext"]isEqualToString:@"writing"]){
-                    NSLog(@"GO TO WRITING VIEW");
                     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
                     appDelegate.gameArray = self.gameArray[0];
                     WritingViewController *writingController = [WritingViewController new];
@@ -126,9 +136,15 @@
             }
         }
         else{
+            [self errorHandler];
         }
         
     }];
+}
+-(void)errorHandler{
+    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Sorry!" message:@"Please make sure you are connected to the internet" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
+    
+    [alertView show];
 }
 -(void)addSubviews{
     [self.view addSubview:self.backgroundColor];
@@ -161,21 +177,21 @@
     
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view);
-        make.top.equalTo(self.view.mas_top).offset(20.0f);
+        make.top.equalTo(self.view.mas_top).offset(15.0f);
         make.width.equalTo(self.view);
-        make.height.equalTo(@60);
+        make.height.equalTo(@30);
     }];
     [self.bannerBackground mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view);
         make.top.equalTo(self.view);
         make.width.equalTo(self.view);
-        make.height.equalTo(@80);
+        make.height.equalTo(@50);
     }];
     [self.descriptionLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view);
         make.top.equalTo(self.bannerBackground.mas_bottom).offset(5.0f);
         make.width.equalTo(self.view);
-        make.height.equalTo(@80);
+        make.height.equalTo(@(self.view.frame.size.height/12));
     }];
     [self.submitButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view.mas_right).offset(-40.0f);
@@ -197,9 +213,9 @@
     }];
     [self.colorScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view);
-        make.top.equalTo(self.descriptionLabel.mas_bottom).offset(5.0f);
+        make.top.equalTo(self.descriptionLabel.mas_bottom);
         make.width.equalTo(self.view);
-        make.height.equalTo(@50);
+        make.height.equalTo(@(self.view.frame.size.height/14));
     }];
     [self.color1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(@5);
@@ -281,22 +297,76 @@
     [self.undoButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(@5);
         make.top.equalTo(self.drawingView.mas_bottom).offset(5.0f);
-        make.width.equalTo(@40);
-        make.height.equalTo(@40);
+        make.width.equalTo(@25);
+        make.height.equalTo(@25);
     }];
     [self.slider mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.undoButton.mas_right).offset(10.0f);
         make.centerY.equalTo(self.undoButton);
         make.width.equalTo(@(self.view.frame.size.width - self.undoButton.frame.size.width*2 - 70.0f));
-        make.height.equalTo(@20);
+        make.height.equalTo(@25);
     }];
     [self.activityIndicatorView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view);
         make.centerY.equalTo(self.view);
     }];
-
+    
 }
 
+-(void)addPurchasedColors{
+    NSArray *arrayOfPurchasedColors = [[PFUser currentUser]objectForKey:@"purchased"];
+    int count = 0;
+    SEL method;
+    float xn = 0;
+    for(int i = 0;i < arrayOfPurchasedColors.count;i ++){
+        for(int l = 0;l<[ColorPurchases nameOfColors].count;l++){
+        
+        
+        //NSLog(@"array of purchased count = %lu  %@",(unsigned long)arrayOfPurchasedColors.count,arrayOfPurchasedColors);
+        
+            if([arrayOfPurchasedColors[i]isEqualToString:[ColorPurchases nameOfColors][l]]){
+                count++;
+                 method = NSSelectorFromString( [NSString stringWithFormat:@"colorScheme%i",l+1]);
+                NSArray *colorScheme1 = [ColorPurchases performSelector:method];
+                //NSLog(@"colorScheme1 = %@",colorScheme1);
+                for(int q = 0;q<colorScheme1.count;q++){
+                    unsigned colorInt = 0;
+                    
+                    
+                    [[NSScanner scannerWithString:colorScheme1[q]] scanHexInt:&colorInt];
+                   
+                    xn += (colorWidth+5.0f);
+                    
+                    UIButton *colorButton = [[BorderedButton alloc]init];
+                    colorButton.backgroundColor = [UIColor bt_colorWithHexValue:colorInt alpha:1.0f];
+                    //colorButton.backgroundColor = [UIColor blackColor];
+                    colorButton.layer.cornerRadius = 4.0f;
+                    colorButton.layer.masksToBounds = YES;
+                    [colorButton addTarget:self action:@selector(Color:) forControlEvents:UIControlEventTouchUpInside];
+                    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void)
+                                   {
+                                       // Background work
+                    dispatch_async(dispatch_get_main_queue(), ^(void){
+                    [self.colorScrollView addSubview:colorButton];
+                    [colorButton mas_makeConstraints:^(MASConstraintMaker *make) {
+                        make.centerY.equalTo(self.colorScrollView);
+                        make.centerX.equalTo(self.color12).offset(xn);
+                        make.width.equalTo(self.color1);
+                        make.height.equalTo(self.color1);
+                    }];
+                    });
+                    });
+                   // NSLog(@"%@",colorButton);
+                    [self.arrayOfColorButtons addObject:colorButton];
+                }
+            }
+        }
+       
+        
+        
+    }
+     NSLog(@"number of added colors = %i",count);
+}
 #pragma mark - AlertViewDelegate
 - (void)alertView:(UIAlertView *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     // the user clicked one of the OK/Cancel buttons
@@ -307,7 +377,7 @@
     }
     else
     {
-       [self dismissViewControllerAnimated:YES completion:nil];
+        [self dismissViewControllerAnimated:YES completion:nil];
     }
 }
 
@@ -352,10 +422,25 @@
 }
 
 #pragma mark - Actions
-
+- (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize {
+    //UIGraphicsBeginImageContext(newSize);
+    UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
+    [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
+}
 -(void)sliderAction:(id)sender{
     UISlider *slider = (UISlider*)sender;
     float value = slider.value;
+   float ratio = self.drawingView.lineWidth/20;
+    if ( ratio < 0.8) {
+        ratio = 0.8;
+    }
+    UIImage *thumbImage = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"slider_dot@3x.png" ofType:nil]];
+    CGSize ss= CGSizeMake(thumbImage.size.width*ratio,thumbImage.size.height*ratio);
+    UIImage *changeImage = [self imageWithImage:thumbImage scaledToSize:ss];
+    [slider setThumbImage:changeImage forState:UIControlStateNormal];
     self.drawingView.lineWidth = value;
 }
 
@@ -397,9 +482,8 @@
     PFFile* file = [PFFile fileWithName:@"image.png" data:fileData];
     [file saveInBackground];
    // NSMutableArray *arrayofimages = [[NSMutableArray alloc]initWithArray:[self.gameArray valueForKey:@"imagesArray"]];
-    NSLog(@"games imagesarray = %@",[self.gameArray[0]valueForKey:@"imagesArray"]);
+    
     if([self.gameArray[0] valueForKey:@"imagesArray"] == nil){
-        NSLog(@"First image saved");
         NSMutableArray *imageArray = [[NSMutableArray alloc]initWithObjects:file, nil];
         NSArray *imageArrayCopy = [NSArray arrayWithArray:imageArray];
         NSMutableArray *userArray = [NSMutableArray arrayWithArray:[self.gameArray[0] valueForKey:@"usersInvolved"]];
@@ -479,7 +563,18 @@
 }
 -(void)Color:(id)sender{
     UIButton *clicked = (UIButton *) sender;
-    clicked.layer.borderColor = [UIColor bt_colorWithHexValue:0x5AC8FA alpha:1.0f ].CGColor;
+    for(int i = 0;i<self.arrayOfColorButtons.count;i++){
+        if(self.arrayOfColorButtons[i] != sender){
+            [(UIButton*)self.arrayOfColorButtons[i] setSelected:NO];
+            
+        }
+        else{
+            [(UIButton*)self.arrayOfColorButtons[i] setSelected:YES];
+        }
+    }
+    
+    
+    
     self.drawingView.lineColor = clicked.backgroundColor;
 }
 
@@ -529,134 +624,147 @@
 
 - (UIButton *)color1 {
     if (!_color1) {
-        _color1 = [UIButton new];
+        _color1 = [BorderedButton new];
         _color1.backgroundColor = [UIColor whiteColor];
         _color1.layer.cornerRadius = 4.0f;
         _color1.layer.masksToBounds = YES;
+
         [_color1 addTarget:self action:@selector(Color:) forControlEvents:UIControlEventTouchUpInside];
+        [self.arrayOfColorButtons addObject:_color1];
     }
     return _color1;
 }
 
 - (UIButton *)color2 {
     if (!_color2) {
-        _color2 = [UIButton new];
+        _color2 = [BorderedButton new];
         _color2.backgroundColor = [UIColor blackColor];
         _color2.layer.cornerRadius = 4.0f;
         _color2.layer.masksToBounds = YES;
-        _color2.layer.borderWidth = 2.0f;
-        _color2.layer.borderColor = [UIColor bt_colorWithHexValue:0x5AC8FA alpha:1.0f ].CGColor;
+        [_color2 setSelected:YES];
         [_color2 addTarget:self action:@selector(Color:) forControlEvents:UIControlEventTouchUpInside];
+        [self.arrayOfColorButtons addObject:_color2];
     }
     return _color2;
 }
 
 - (UIButton *)color3 {
     if (!_color3) {
-        _color3 = [UIButton new];
+        _color3 = [BorderedButton new];
         _color3.backgroundColor = [UIColor redColor];
         _color3.layer.cornerRadius = 4.0f;
         _color3.layer.masksToBounds = YES;
         [_color3 addTarget:self action:@selector(Color:) forControlEvents:UIControlEventTouchUpInside];
+        [self.arrayOfColorButtons addObject:_color3];
     }
     return _color3;
 }
 
 - (UIButton *)color4 {
     if (!_color4) {
-        _color4 = [UIButton new];
+        _color4 = [BorderedButton new];
         _color4.backgroundColor = [UIColor orangeColor];
         _color4.layer.cornerRadius = 4.0f;
         _color4.layer.masksToBounds = YES;
         [_color4 addTarget:self action:@selector(Color:) forControlEvents:UIControlEventTouchUpInside];
+        [self.arrayOfColorButtons addObject:_color4];
     }
     return _color4;
 }
 
 - (UIButton *)color5 {
     if (!_color5) {
-        _color5 = [UIButton new];
+        _color5 = [BorderedButton new];
         _color5.backgroundColor = [UIColor yellowColor];
         _color5.layer.cornerRadius = 4.0f;
         _color5.layer.masksToBounds = YES;
         [_color5 addTarget:self action:@selector(Color:) forControlEvents:UIControlEventTouchUpInside];
+        [self.arrayOfColorButtons addObject:_color5];
     }
     return _color5;
 }
 
 - (UIButton *)color6 {
     if (!_color6) {
-        _color6 = [UIButton new];
+        _color6 = [BorderedButton new];
         _color6.backgroundColor = [UIColor greenColor];
         _color6.layer.cornerRadius = 4.0f;
         _color6.layer.masksToBounds = YES;
         [_color6 addTarget:self action:@selector(Color:) forControlEvents:UIControlEventTouchUpInside];
+        [self.arrayOfColorButtons addObject:_color6];
     }
     return _color6;
 }
 
 - (UIButton *)color7 {
     if (!_color7) {
-        _color7 = [UIButton new];
+        _color7 = [BorderedButton new];
         _color7.backgroundColor = [UIColor blueColor];
         _color7.layer.cornerRadius = 4.0f;
         _color7.layer.masksToBounds = YES;
         [_color7 addTarget:self action:@selector(Color:) forControlEvents:UIControlEventTouchUpInside];
+        [self.arrayOfColorButtons addObject:_color7];
     }
     return _color7;
 }
 
 - (UIButton *)color8 {
     if (!_color8) {
-        _color8 = [UIButton new];
+        _color8 = [BorderedButton new];
         _color8.backgroundColor = [UIColor purpleColor];
         _color8.layer.cornerRadius = 4.0f;
         _color8.layer.masksToBounds = YES;
         [_color8 addTarget:self action:@selector(Color:) forControlEvents:UIControlEventTouchUpInside];
+        [self.arrayOfColorButtons addObject:_color8];
     }
     return _color8;
 }
 
 - (UIButton *)color9 {
     if (!_color9) {
-        _color9 = [UIButton new];
+        _color9 = [BorderedButton new];
         _color9.backgroundColor = [UIColor brownColor];
         _color9.layer.cornerRadius = 4.0f;
         _color9.layer.masksToBounds = YES;
         [_color9 addTarget:self action:@selector(Color:) forControlEvents:UIControlEventTouchUpInside];
+        [self.arrayOfColorButtons addObject:_color9];
     }
     return _color9;
 }
 
 - (UIButton *)color10 {
     if (!_color10) {
-        _color10 = [UIButton new];
+        _color10 = [BorderedButton new];
         _color10.backgroundColor = [UIColor grayColor];
         _color10.layer.cornerRadius = 4.0f;
         _color10.layer.masksToBounds = YES;
         [_color10 addTarget:self action:@selector(Color:) forControlEvents:UIControlEventTouchUpInside];
+        [self.arrayOfColorButtons addObject:_color10];
     }
     return _color10;
 }
 
 - (UIButton *)color11 {
     if (!_color11) {
-        _color11 = [UIButton new];
+        _color11 = [BorderedButton new];
         _color11.backgroundColor = [UIColor lightGrayColor];
         _color11.layer.cornerRadius = 4.0f;
         _color11.layer.masksToBounds = YES;
         [_color11 addTarget:self action:@selector(Color:) forControlEvents:UIControlEventTouchUpInside];
+        [self.arrayOfColorButtons addObject:_color11];
     }
     return _color11;
 }
 
 -(UIButton *)color12{
     if(!_color12){
-        _color12 = [UIButton new];
+        _color12 = [BorderedButton new];
         _color12.backgroundColor = [UIColor bt_colorWithHexValue:0x5856D6 alpha:1.0f];
         _color12.layer.cornerRadius = 4.0f;
         _color12.layer.masksToBounds = YES;
         [_color12 addTarget:self action:@selector(Color:) forControlEvents:UIControlEventTouchUpInside];
+        [self.arrayOfColorButtons addObject:_color12];
+       
     }
     return _color12;
 }
@@ -697,13 +805,14 @@
     if (!_slider) {
         _slider = [UISlider new];
         [_slider addTarget:self action:@selector(sliderAction:) forControlEvents:UIControlEventValueChanged];
+       
+        UIImage *sliderMinTrackImage = [UIImage imageNamed: @"slider@3x.png"];//resizableImageWithCapInsets:UIEdgeInsetsMake(0, 4, 0, 4)];
         
-        UIImage *sliderMinTrackImage = [[UIImage imageNamed: @"customSlider2.png"]resizableImageWithCapInsets:UIEdgeInsetsMake(0, 4, 0, 4)];
-        
-        UIImage *sliderMaxTrackImage = [UIImage imageNamed: @"customSlider.png"];
+        UIImage *sliderMaxTrackImage = [UIImage imageNamed: @"slider@3x.png"];
         [_slider setBackgroundColor:[UIColor clearColor]];
         [_slider setMinimumTrackImage:sliderMinTrackImage forState:UIControlStateNormal];
         [_slider setMaximumTrackImage:sliderMaxTrackImage forState:UIControlStateNormal];
+        [_slider setThumbImage:[UIImage imageNamed:@"slider_dot@3x.png"] forState:UIControlStateNormal];
         _slider.minimumValue = 1.0;
         _slider.maximumValue = 50.0;
         _slider.continuous = YES;
@@ -751,7 +860,7 @@
     if (!_titleLabel) {
         _titleLabel = [UILabel new];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
-        _titleLabel.font = [UIFont fontWithName:@"BubblegumSans-Regular" size:50];
+        _titleLabel.font = [UIFont fontWithName:@"BubblegumSans-Regular" size:35];
         _titleLabel.textColor = [UIColor bt_colorWithHexValue:0xFFFFFF alpha:1.0f];
         _titleLabel.text = @"Draw it";
         _titleLabel.minimumScaleFactor = 0.5;
@@ -787,4 +896,14 @@
     }
     return _colorScrollView;
 }
+
+- (NSMutableArray *)arrayOfColorButtons {
+    if (!_arrayOfColorButtons) {
+        _arrayOfColorButtons = [NSMutableArray new];
+
+    }
+    return _arrayOfColorButtons;
+}
+
+
 @end

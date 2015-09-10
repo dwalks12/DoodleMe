@@ -186,13 +186,13 @@
         //[game setObject:imagesArray forKey:@"imagesArray"];
         [game saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if(!error){
-                NSLog(@"You have started a new game!");
+               
             }
             [self navigateToNewGame];
         }];
     }
     else{
-        NSLog(@"Please write a description");
+        
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry"
                                                         message:@"Please write a description for the next Player"
                                                        delegate:self
@@ -206,7 +206,6 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 -(void)navigateToNewGame{
-    NSLog(@"navigating to new game!");
     [self dismissViewControllerAnimated:YES completion:nil];
    
 
@@ -262,7 +261,7 @@
     if (!_titleLabel) {
         _titleLabel = [UILabel new];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
-        _titleLabel.font = [UIFont fontWithName:@"BubblegumSans-Regular" size:50];
+        _titleLabel.font = [UIFont fontWithName:@"BubblegumSans-Regular" size:35];
         _titleLabel.textColor = [UIColor bt_colorWithHexValue:0xFFFFFF alpha:1.0f];
         _titleLabel.text = @"Start Chain";
         _titleLabel.minimumScaleFactor = 0.5;

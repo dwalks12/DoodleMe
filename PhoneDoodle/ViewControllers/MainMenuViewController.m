@@ -13,9 +13,11 @@
 #import "ViewController.h"
 #import "YourGamesViewController.h"
 #import "ShopViewController.h"
+#import <StartApp/StartApp.h>
 
-
-@interface MainMenuViewController ()
+@interface MainMenuViewController ()<STABannerDelegateProtocol>{
+     STABannerView* bannerView;
+}
 @property (nonatomic, strong) UIButton * startNewGame;
 @property (nonatomic, strong) UIButton * joinAGame;
 @property (nonatomic, strong) UIView *backgroundView;
@@ -31,12 +33,20 @@
 }
 - (void)viewDidLoad {
     //[super viewDidLoad];
-    
+   
     [self addSubviews];
     [self defineLayouts];
+    [self showBannerAds];
 
 }
-
+-(void)showBannerAds{
+    bannerView = [[STABannerView alloc] initWithSize:STA_AutoAdSize
+                                              origin:CGPointMake(0, self.view.frame.size.height - 50)
+                                            withView:self.view
+                                        withDelegate:self];
+    [self.view addSubview:bannerView];
+    [bannerView showBanner];
+}
 -(void)addSubviews{
     [self.view addSubview:self.backgroundView];
     [self.view addSubview:self.startNewGame];
@@ -46,6 +56,8 @@
     [self.view addSubview:self.settingsButton];
     [self.view addSubview:self.yourGamesButton];
     [self.view addSubview:self.shopButton];
+   
+    
 
 }
 
@@ -57,12 +69,7 @@
         make.height.equalTo(self.view);
     }];
 
-    [self.startNewGame mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self.view);
-        make.top.equalTo(self.view).offset(100.0f);
-        make.width.equalTo(self.view).offset(-40.0f);
-        make.height.equalTo(@80);
-    }];
+    
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view);
         make.top.equalTo(self.view.mas_top).offset(20.0f);
@@ -74,6 +81,12 @@
         make.top.equalTo(self.view);
         make.width.equalTo(self.view);
         make.height.equalTo(@80);
+    }];
+    [self.startNewGame mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view);
+        make.top.equalTo(self.bannerBackground.mas_bottom).offset(20.0f);
+        make.width.equalTo(self.view).offset(-40.0f);
+        make.height.equalTo(@((self.view.frame.size.height - self.bannerBackground.frame.size.height)/4 - 80.0f));
     }];
     [self.joinAGame mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view);
@@ -100,7 +113,15 @@
         make.height.equalTo(self.yourGamesButton);
     }];
 }
-
+- (void) didDisplayBannerAd:(STABannerView*)banner{
+    
+}
+- (void) failedLoadBannerAd:(STABannerView*)banner withError:(NSError *)error{
+    
+}
+- (void) didClickBannerAd:(STABannerView*)banner{
+    
+}
 -(void)joinAGameAction{
     //[self.joinAGame setBackgroundColor:[UIColor bt_colorWithHexValue:0xFF2C96 alpha:1.0f]];
     ViewController *joinGameViewController = [ViewController new];
@@ -170,9 +191,9 @@
     if (!_titleLabel) {
         _titleLabel = [UILabel new];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
-        _titleLabel.font = [UIFont fontWithName:@"BubblegumSans-Regular" size:50];
+        _titleLabel.font = [UIFont fontWithName:@"BubblegumSans-Regular" size:35];
         _titleLabel.textColor = [UIColor bt_colorWithHexValue:0xFFFFFF alpha:1.0f];
-        _titleLabel.text = @"DoodleMe";
+        _titleLabel.text = @"SketchyDoodle";
         _titleLabel.minimumScaleFactor = 0.5;
         _titleLabel.adjustsFontSizeToFitWidth = YES;
     }

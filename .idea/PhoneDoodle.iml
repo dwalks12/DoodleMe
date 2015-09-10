@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="CIDR_MODULE" version="4">
   <component name="NewModuleRootManager">
+    <content url="file:///Applications/Xcode-Beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/lib/libsqlite3.dylib">
+      <sourceFolder url="file:///Applications/Xcode-Beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/lib/libsqlite3.dylib" isTestSource="false" />
+    </content>
+    <content url="file:///Applications/Xcode-Beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/lib/libz.dylib">
+      <sourceFolder url="file:///Applications/Xcode-Beta.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/lib/libz.dylib" isTestSource="false" />
+    </content>
     <content url="file://$USER_HOME$/Downloads/Bubblegum_Sans/BubblegumSans-Regular.ttf">
       <sourceFolder url="file://$USER_HOME$/Downloads/Bubblegum_Sans/BubblegumSans-Regular.ttf" isTestSource="false" />
+    </content>
+    <content url="file://$USER_HOME$/Downloads/IOS-InApp SDK-InApp-3.1.0/StartApp.bundle">
+      <sourceFolder url="file://$USER_HOME$/Downloads/IOS-InApp SDK-InApp-3.1.0/StartApp.bundle" isTestSource="false" />
     </content>
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />

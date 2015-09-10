@@ -91,7 +91,7 @@
     _finishedPaths = [NSMutableArray array];
     _chosenWidth = [NSMutableArray array];
     _chosenColors = [NSMutableArray array];
-
+    
     self.pathArray = [NSMutableArray array];
     self.bufferArray = [NSMutableArray array];
     
@@ -99,7 +99,7 @@
     self.lineColor = kDefaultLineColor;
     self.lineWidth = kDefaultLineWidth;
     self.lineAlpha = kDefaultLineAlpha;
-
+    
     self.drawMode = ACEDrawingModeOriginalSize;
     
     // set the transparent background
@@ -207,12 +207,12 @@
         {
             return ACE_AUTORELEASE([ACEDrawingTextTool new]);
         }
-
+            
         case ACEDrawingToolTypeMultilineText:
         {
             return ACE_AUTORELEASE([ACEDrawingMultilineTextTool new]);
         }
-
+            
         case ACEDrawingToolTypeRectagleStroke:
         {
             ACEDrawingRectangleTool *tool = ACE_AUTORELEASE([ACEDrawingRectangleTool new]);
@@ -268,8 +268,8 @@
     [bezier moveToPoint:currentPoint];
     self.originalTime = [NSDate timeIntervalSinceReferenceDate];
     _ongoingPath[@((int)touch)] = bezier;
-
-
+    
+    
     self.currentTool = [self toolWithCurrentSettings];
     self.currentTool.lineWidth = self.lineWidth;
     self.currentTool.lineColor = self.lineColor;
@@ -295,20 +295,20 @@
 {
     // save all the touches in the path
     UITouch *touch = [touches anyObject];
-
+    
     for (UITouch *touch in touches)
     {
         NSNumber *key = @((int)touch);
         UIBezierPath *path = _ongoingPath[key];
-
+        
         if (path){
             CGPoint point = [touch locationInView:self];
             [path addLineToPoint:point];
         }
     }
-
-
-
+    
+    
+    
     previousPoint2 = previousPoint1;
     previousPoint1 = [touch previousLocationInView:self];
     currentPoint = [touch locationInView:self];
@@ -338,13 +338,13 @@
 {
     // make sure a point is recorded
     [self touchesMoved:touches withEvent:event];
-
-
+    
+    
     for (UITouch *touch in touches)
     {
         NSNumber *key = @((int)touch);
         UIBezierPath *path = _ongoingPath[key];
-
+        
         if (path){
             CGPoint point = [touch locationInView:self];
             [path addLineToPoint:point];
@@ -355,9 +355,9 @@
         [_ongoingPath removeObjectForKey:key];
         [_finishedPaths addObject:path];
     }
-
-
-
+    
+    
+    
     if ([self.currentTool isKindOfClass:[ACEDrawingTextTool class]]) {
         [self startTextEntry];
     }
@@ -401,7 +401,7 @@
     UIView *preview = [[UIView alloc] initWithFrame:self.frame];
     preview.backgroundColor = [UIColor whiteColor];
     [self addSubview:preview];
-
+    
     NSTimeInterval total = 0.6;
     int i = 0;
     for (UIBezierPath *path in _finishedPaths)
@@ -423,16 +423,16 @@
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, total * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
             [shapeLayer addAnimation:pathAnimation forKey:@"strokeEnd"];
             [preview.layer addSublayer:shapeLayer];
-           
+            
         });
-
+        
         total += self.originalTime;
     }
-
+    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, total * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         [preview removeFromSuperview];
     });
-
+    
 }
 #pragma mark - Text Entry
 
@@ -565,7 +565,7 @@
 - (void)keyboardDidShow:(NSNotification *)notification
 {
     self.originalFrameYPos = self.frame.origin.y;
-
+    
     if (IOS8_OR_ABOVE) {
         [self adjustFramePosition:notification];
     }
@@ -582,31 +582,31 @@
     CGPoint textViewBottomPoint = [self convertPoint:self.textView.frame.origin toView:self];
     CGFloat textViewOriginY = textViewBottomPoint.y;
     CGFloat textViewBottomY = textViewOriginY + self.textView.frame.size.height;
-
+    
     CGSize keyboardSize = [[[notification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-
+    
     CGFloat offset = (self.frame.size.height - keyboardSize.width) - textViewBottomY;
-
+    
     if (offset < 0) {
         CGFloat newYPos = self.frame.origin.y + offset;
         self.frame = CGRectMake(self.frame.origin.x,newYPos, self.frame.size.width, self.frame.size.height);
-
+        
     }
 }
 - (void)adjustFramePosition:(NSNotification *)notification {
     CGPoint textViewBottomPoint = [self convertPoint:self.textView.frame.origin toView:nil];
     textViewBottomPoint.y += self.textView.frame.size.height;
-
+    
     CGRect screenRect = [[UIScreen mainScreen] bounds];
-
+    
     CGSize keyboardSize = [[[notification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-
+    
     CGFloat offset = (screenRect.size.height - keyboardSize.height) - textViewBottomPoint.y;
-
+    
     if (offset < 0) {
         CGFloat newYPos = self.frame.origin.y + offset;
         self.frame = CGRectMake(self.frame.origin.x,newYPos, self.frame.size.width, self.frame.size.height);
-
+        
     }
 }
 

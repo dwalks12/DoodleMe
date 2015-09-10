@@ -12,7 +12,7 @@
 #import "NSObject+BTRACAdditions.h"
 #import "UIColor+DMHexColors.h"
 
-@interface LogInViewController ()<UITextFieldDelegate>
+@interface LogInViewController ()<UITextFieldDelegate,UIAlertViewDelegate>
 @property (strong, nonatomic) UIButton *loginButton;
 @property (strong, nonatomic) UITextField *usernameField;
 @property (strong, nonatomic) UITextField *passwordField;
@@ -131,10 +131,21 @@
         }
     }
     else{
+        UIAlertView *acceptTerms = [[UIAlertView alloc]initWithTitle:@"Terms & Conditions" message:@"Please note, if you send inappropriate content and are reported you will be banned" delegate:self cancelButtonTitle:@"Accept" otherButtonTitles:@"Cancel", nil];
+        [acceptTerms show];
+        
+            }
+    
+    
+}
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if(buttonIndex == 0){
+        NSString *username = [self.usernameField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        NSString *password = [self.passwordField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         PFUser *newUser = [PFUser user];
         newUser.username = username;
         newUser.password = password;
-       
+        
         [self.usernameField resignFirstResponder];
         [self.passwordField resignFirstResponder];
         [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
@@ -149,48 +160,50 @@
                         
                     }
                     else{
-                        NSLog(@"Pfuser = %@",[PFUser currentUser].username);
-                        
+                                                
                         NSString *personString = [PFUser currentUser].username;
                         NSString *yourNameEdited = [personString stringByReplacingOccurrencesOfString:@" " withString:@""];
                         NSString * strippedNumber = [yourNameEdited stringByReplacingOccurrencesOfString:@"[^a-zA-Z]" withString:@"" options:NSRegularExpressionSearch range:NSMakeRange(0, [yourNameEdited length])];
-                        
+                        /*
                         [[PFInstallation currentInstallation] setObject:[PFUser currentUser] forKey:@"user"];
                         [[PFInstallation currentInstallation] addUniqueObject:strippedNumber forKey:@"channels"];
                         
                         
                         
                         [[PFInstallation currentInstallation] saveInBackground];
-                        
+                        */
                         [self.viewModel.loginCommand execute:nil];
                         
                     }
                     
                 }];
-
+                
             }
             else{
-              
+                
                 NSLog(@"Pfuser = %@",[PFUser currentUser].username);
                 
                 NSString *personString = [PFUser currentUser].username;
                 NSString *yourNameEdited = [personString stringByReplacingOccurrencesOfString:@" " withString:@""];
                 NSString * strippedNumber = [yourNameEdited stringByReplacingOccurrencesOfString:@"[^a-zA-Z]" withString:@"" options:NSRegularExpressionSearch range:NSMakeRange(0, [yourNameEdited length])];
-                
+                /*
                 [[PFInstallation currentInstallation] setObject:[PFUser currentUser] forKey:@"user"];
                 [[PFInstallation currentInstallation] addUniqueObject:strippedNumber forKey:@"channels"];
                 
                 
                 
                 [[PFInstallation currentInstallation] saveInBackground];
-                
+                */
                 [self.viewModel.loginCommand execute:nil];
-               
+                
             }
             
         }];
+        
     }
-    
+    else{
+        //show terms and conditions
+    }
     
 }
 - (void)closeLoginView {
@@ -304,9 +317,9 @@
     if (!_titleLabel) {
         _titleLabel = [UILabel new];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
-        _titleLabel.font = [UIFont fontWithName:@"BubblegumSans-Regular" size:50];
+        _titleLabel.font = [UIFont fontWithName:@"BubblegumSans-Regular" size:40];
         _titleLabel.textColor = [UIColor bt_colorWithHexValue:0xFFFFFF alpha:1.0f];
-        _titleLabel.text = @"DoodleMe";
+        _titleLabel.text = @"SketchyDoodle";
         _titleLabel.minimumScaleFactor = 0.5;
         _titleLabel.adjustsFontSizeToFitWidth = YES;
     }

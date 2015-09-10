@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C71333A166A1640A4C5D5ADC"
+               BlueprintIdentifier = "9F678E0895E556CAD5333029"
                BuildableName = "libGMGridView.a"
                BlueprintName = "GMGridView"
                ReferencedContainer = "container:Pods.xcodeproj">

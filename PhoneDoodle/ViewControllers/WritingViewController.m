@@ -50,7 +50,6 @@
 
 
 -(void)acquireImage{
-    NSLog(@"acquire");
     self.blockingImage.frame = self.drawnImage.frame;
     self.blockingImage.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.blockingImage];
@@ -60,7 +59,7 @@
     fileArray = [appDelegate.gameArray valueForKey:@"imagesArray"];
     if(fileArray != nil){
             PFFile *imageFile = fileArray[fileArray.count-1];
-        NSLog(@"imageFile = %@",imageFile);
+        
             PFImageView *imageView = [[PFImageView alloc]init];
             imageView.file = imageFile;
         
@@ -126,10 +125,11 @@
     //self.activityIndicatorView.hidden = YES;
     [self.view addSubview:self.backgroundView];
     [self.view addSubview:self.descriptionTextView];
-    [self.view addSubview:self.submitButton];
+   
     [self.view addSubview:self.bannerBackground];
     [self.view addSubview:self.titleLabel];
     [self.view addSubview:self.backButton];
+     [self.view addSubview:self.submitButton];
     [self.view addSubview:self.drawnImage];
     [self.view addSubview:self.activityIndicatorView];
     [self.view addSubview:self.preview];
@@ -161,21 +161,22 @@
         make.width.equalTo(self.view);
         make.height.equalTo(@80);
     }];
-    [self.descriptionTextView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self.view);
-        make.top.equalTo(self.bannerBackground.mas_bottom).offset(10.0f);
-        make.width.equalTo(self.view);
-        make.height.equalTo(@100);
-    }];
+    
     [self.submitButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self.view);
-        make.bottom.equalTo(self.view.mas_bottom).offset(-10.0f);
-        make.width.equalTo(self.view).offset(-40.0f);
-        make.height.equalTo(@50);
+        make.centerX.equalTo(self.view.mas_right).offset(-40.0f);
+        make.centerY.equalTo(self.titleLabel.mas_centerY);
+        make.width.equalTo(@80);
+        make.height.equalTo(@40);
     }];
     [self.activityIndicatorView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view);
         make.centerY.equalTo(self.view);
+    }];
+    [self.descriptionTextView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.view);
+        make.top.equalTo(self.bannerBackground.mas_bottom).offset(10.0f);
+        make.width.equalTo(self.view);
+        make.height.equalTo(@(self.view.frame.size.height - 10.0f - self.bannerBackground.frame.size.height - self.view.frame.size.width - self.view.frame.size.height/5));
     }];
     [self.drawnImage mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.view);
@@ -183,6 +184,7 @@
         make.width.equalTo(self.view);
         make.height.equalTo(self.descriptionTextView.mas_width);
     }];
+    
     [self.preview mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.equalTo(self.drawnImage);
         make.top.equalTo(self.descriptionTextView.mas_bottom).offset(10.0f);
@@ -272,20 +274,29 @@
 
 
 -(void)submit{
+    UIActivityIndicatorView *activityInd = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+    [self.view addSubview:activityInd];
+    [activityInd mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.equalTo(self.submitButton);
+        make.centerY.equalTo(self.submitButton);
+    }];
+    activityInd.hidesWhenStopped = YES;
+    
+    
+    [activityInd startAnimating];
+    self.submitButton.hidden = YES;
     if(self.sentText.length >= 1){
         //NSLog(@"send that text");
         
-        self.activityIndicatorView.hidden = NO;
-        [self.activityIndicatorView startAnimating];
+        //self.activityIndicatorView.hidden = NO;
+        //[self.activityIndicatorView startAnimating];
         AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
             NSMutableArray *userArray = [NSMutableArray arrayWithArray:[appDelegate.gameArray valueForKey:@"usersInvolved"]];
-        NSLog(@"userArray = %@", userArray);
-            [userArray addObject:[PFUser currentUser].username];
-        NSLog(@"gameObject = %@",[appDelegate.gameArray valueForKey:@"objectId"]);
+        
             NSArray *userArrayCopy = [NSArray arrayWithArray:userArray];
         
             NSMutableArray *sentTextArray = [NSMutableArray arrayWithArray:[appDelegate.gameArray valueForKey:@"sentText"]];
-            NSLog(@"sentTextArray = %@", sentTextArray);
+           
             [sentTextArray addObject:self.sentText];
         
         NSArray *sentTextArrayCopy = [NSArray arrayWithArray:sentTextArray];
@@ -299,7 +310,7 @@
                 if(!error){
                    
                 }
-                
+                activityInd.hidden = YES;
                 [self backToMain];
                 
                 
@@ -332,7 +343,7 @@
     if (!_titleLabel) {
         _titleLabel = [UILabel new];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
-        _titleLabel.font = [UIFont fontWithName:@"BubblegumSans-Regular" size:50];
+        _titleLabel.font = [UIFont fontWithName:@"BubblegumSans-Regular" size:35];
         _titleLabel.textColor = [UIColor bt_colorWithHexValue:0xFFFFFF alpha:1.0f];
         _titleLabel.text = @"Description";
         _titleLabel.minimumScaleFactor = 0.5;
@@ -387,12 +398,9 @@
 - (UIButton *)submitButton {
     if (!_submitButton) {
         _submitButton = [UIButton new];
-        _submitButton.titleLabel.font = [UIFont fontWithName:@"BubblegumSans-Regular" size:30];
+        _submitButton.titleLabel.font = [UIFont fontWithName:@"BubblegumSans-Regular" size:25];
+        _submitButton.titleLabel.textColor = [UIColor whiteColor];
         [_submitButton setTitle:@"Submit" forState:UIControlStateNormal];
-        [_submitButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [_submitButton setBackgroundColor:[UIColor bt_colorWithHexValue:0xFF3B30 alpha:1.0f]];
-        _submitButton.layer.cornerRadius = 10.0f;
-        _submitButton.layer.masksToBounds = YES;
         [_submitButton addTarget:self action:@selector(submit) forControlEvents:UIControlEventTouchUpInside];
     }
     return _submitButton;
