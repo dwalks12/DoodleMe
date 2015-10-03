@@ -95,7 +95,12 @@
 
 -(void)backToMain{
     MainMenuViewController *viewController = [MainMenuViewController new];
-    [self presentViewController:viewController animated:YES completion:nil];
+    UIViewAnimationTransition trans = UIViewAnimationTransitionCurlUp;
+    [UIView beginAnimations: nil context: nil];
+    [UIView setAnimationDuration:1.0];
+    [UIView setAnimationTransition: trans forView: [self.view window] cache: YES];
+    [self presentViewController:viewController animated:NO completion:nil];
+    [UIView commitAnimations];
 }
 #pragma mark -- StartAppAd Delegate
 

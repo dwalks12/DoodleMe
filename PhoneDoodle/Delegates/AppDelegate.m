@@ -14,6 +14,8 @@
 #import <Parse/Parse.h>
 #import <VungleSDK/VungleSDK.h>
 #import <StartApp/StartApp.h>
+#import <AFNetworking/AFNetworking.h>
+
 
 
 
@@ -24,13 +26,19 @@
 
 @implementation AppDelegate
 
+-(BOOL) isInternetReachable
+{
+    return [AFNetworkReachabilityManager sharedManager].reachable;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [NSThread sleepForTimeInterval:2];
     // Override point for customization after application launch.
     //ViewController *viewController = [ViewController new];
     STAStartAppSDK* sdk = [STAStartAppSDK sharedInstance];
+    sdk.devID = @"107449490";
     sdk.appID = @"207921218";
+    
     NSString* appID = @"com.RiseDigital.PhoneDoodle";
     VungleSDK* sdk2 = [VungleSDK sharedSDK];
     // start vungle publisher library
@@ -42,7 +50,30 @@
     
     // [Optional] Track statistics around application opens.
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
     
+    [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        
+        NSLog(@"Reachability changed: %@", AFStringFromNetworkReachabilityStatus(status));
+        
+        
+        switch (status) {
+            case AFNetworkReachabilityStatusReachableViaWWAN:
+            case AFNetworkReachabilityStatusReachableViaWiFi:
+                // -- Reachable -- //
+                NSLog(@"Reachable");
+                break;
+            case AFNetworkReachabilityStatusNotReachable:
+            default:
+                // -- Not reachable -- //
+                
+                NSLog(@"Not Reachable");
+                UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Sorry!" message:@"Please make sure you are connected to the internet" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
+                [alertView show];
+                break;
+        }
+        
+    }];
     self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
 
     //UIViewController *vc = [[[UIApplication sharedApplication] keyWindow] rootViewController];

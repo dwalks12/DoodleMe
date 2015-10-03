@@ -44,6 +44,7 @@
 }
 
 - (void)viewDidLoad {
+    NSLog(@"do you crash here");
     numberOfRounds = 0;
     counter = 1;
     secondCounter = 1;
@@ -52,13 +53,13 @@
     self.activityIndicatorView.frame = CGRectMake(self.view.frame.size.width/2 - self.activityIndicatorView.frame.size.width/2, self.view.frame.size.height/2 - self.activityIndicatorView.frame.size.height/2, self.activityIndicatorView.frame.size.width, self.activityIndicatorView.frame.size.height);
     [self addSubviews];
     [self loadTheViews];
-    // Do any additional setup after loading the view.
 }
 
 -(void)loadTheViews{
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     NSNumber *count = [appDelegate.gameArray valueForKey:@"chainLength"];
     numberOfRounds = [count intValue];
+    NSLog(@"%i",numberOfRounds);
        UIImageView *loadingImages = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, (self.view.frame.size.width-45)/2, (self.view.frame.size.width-45)/2)];
     UIActivityIndicatorView *activityInd = [[UIActivityIndicatorView alloc]initWithFrame:CGRectMake((self.view.frame.size.width-45)/4 - self.activityIndicatorView.frame.size.width/2, (self.view.frame.size.width-45)/4 - self.activityIndicatorView.frame.size.height/2, self.activityIndicatorView.frame.size.width, self.activityIndicatorView.frame.size.height)];
     activityInd.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
@@ -71,25 +72,19 @@
     for(int i = 0;i<array.count;i++){
         
         [self.imagesArray addObject:loadingImages];
-       // NSLog(@"images array = %lu",(unsigned long)self.imagesArray.count);
-        
     }
     self.textArray = [appDelegate.gameArray valueForKey:@"sentText"];
     self.nameArray = [appDelegate.gameArray valueForKey:@"usersInvolved"];
     [self defineLayouts];
     NSMutableArray *imageTempArray = self.imagesArray;
-   // NSLog(@"imageTemp Array = %@ ", imageTempArray);
-    
     for(int l = 0;l<array.count; l ++){
        
        
         if(imageTempArray != nil){
             
             PFFile *imageFile = array[l];
-            //NSLog(@"imageFile = %@",imageFile);
             PFImageView *imageView = [[PFImageView alloc]init];
             imageView.file = imageFile;
-           // NSLog(@"You make it here fine");
             
             [imageView loadInBackground:^(UIImage *img, NSError *error){
                 if(!error){
@@ -101,10 +96,6 @@
                          secondCounter = 1;
                          
                          [self performSelector:@selector(reloadGrid) withObject:nil afterDelay:0.1];
-                        //[self reloadGrid];
-                    
-                    
-                //
                     
                 }
             }];
@@ -113,8 +104,6 @@
         }
         [self reloadGrid];
     }
-    //[self performSelector:@selector(reloadGrid) withObject:nil afterDelay:0.1];
-    
     
 }
 -(void)reloadGrid{
@@ -131,8 +120,14 @@
 }
 
 -(void)backToMain{
+    
     YourGamesViewController *viewController = [YourGamesViewController new];
-    [self presentViewController:viewController animated:YES completion:nil];
+    UIViewAnimationTransition trans = UIViewAnimationTransitionCurlUp;
+    [UIView beginAnimations: nil context: nil];
+    [UIView setAnimationDuration:1.0];
+    [UIView setAnimationTransition: trans forView: [self.view window] cache: YES];
+    [self presentViewController:viewController animated:NO completion:nil];
+    [UIView commitAnimations];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
@@ -143,10 +138,9 @@
         [self.userLabel removeFromSuperview];
     }
 }
+
 #pragma mark GMGridViewDataSource
 
-
-//////////////////////////////////////////////////////////////
 - (BOOL)GMGridView:(GMGridView *)gridView shouldAllowMovingCell:(GMGridViewCell *)view atIndex:(NSInteger)index{
     return NO;
 }
@@ -155,8 +149,7 @@
 }
 - (NSInteger)numberOfItemsInGMGridView:(GMGridView *)gridView
 {
-    //return the count of things
-    NSLog(@"number of Rounds = %i",numberOfRounds);
+   
     counter = 1;
     secondCounter = 1;
     return numberOfRounds;
@@ -174,15 +167,7 @@
 
 - (GMGridViewCell *)GMGridView:(GMGridView *)gridView cellForItemAtIndex:(NSInteger)index
 {
-    NSLog(@"index = %li",(long)index);
-    NSLog(@"second counter = %i",secondCounter);
-    NSLog(@"counter = %i",counter);
-    NSLog(@"index - counter = %li",index - counter);
-    NSLog(@"index - secondCounter = %li",index - secondCounter);
-    //cell.selectionStyle = AQGridViewCellSelectionStyleGlow;
     CGSize size = [self GMGridView:gridView sizeForItemsInInterfaceOrientation:[[UIApplication sharedApplication] statusBarOrientation]];
-    
-   
     GMGridViewCell* cell = [[GMGridViewCell alloc] initWithFrame:CGRectMake(0, 200, size.width, size.height)];
     UIView *theView =[[UIView alloc]initWithFrame:CGRectMake(0, 200, size.width, size.height)];
     theView.backgroundColor = [UIColor clearColor];
@@ -237,13 +222,6 @@
         counter = 1;
         secondCounter = 1;
     }
-    
-    
-    
-    
-    
-    
-    
     return cell;
 }
 
@@ -338,14 +316,7 @@
         make.height.equalTo(self.reportButton);
     }];
     self.reportedPlayer = [NSString stringWithFormat:@"%@",self.nameArray[position]];
-    //AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    //appDelegate.gameArray = [NSArray arrayWithArray:self.yourGames[position]];
     
-    //SelectedGameViewController *viewController = [SelectedGameViewController new];
-    //[self presentViewController:viewController animated:YES completion:nil];
-    //Advance to that thread...
-    
-    // NSLog(@"Did tap at index %d", position);
     
 }
 
@@ -360,12 +331,9 @@
     
     [alert show];
     
-    //_lastDeleteItemIndexAsked = index;
 }
 
-
-
-
+#pragma mark -- Layouts
 
 -(void)defineLayouts{
     [self.backgroundView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -404,6 +372,8 @@
         make.height.equalTo(self.view).offset(-100.0f);
     }];
 }
+
+#pragma mark -- Properties
 
 
 - (UIActivityIndicatorView *)activityIndicatorView {

@@ -9,6 +9,7 @@ target 'PhoneDoodle' do
 	pod 'ReactiveCocoa', '~> 2.5'
 	pod 'ParseUI'
 	pod 'GMGridView', '~> 1.1'
+	pod 'AFNetworking', '~> 2.6'
 end
 
 target 'PhoneDoodleTests' do

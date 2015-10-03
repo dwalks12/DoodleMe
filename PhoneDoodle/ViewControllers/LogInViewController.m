@@ -168,8 +168,6 @@
                         [[PFInstallation currentInstallation] setObject:[PFUser currentUser] forKey:@"user"];
                         [[PFInstallation currentInstallation] addUniqueObject:strippedNumber forKey:@"channels"];
                         
-                        
-                        
                         [[PFInstallation currentInstallation] saveInBackground];
                         */
                         [self.viewModel.loginCommand execute:nil];
@@ -190,8 +188,6 @@
                 [[PFInstallation currentInstallation] setObject:[PFUser currentUser] forKey:@"user"];
                 [[PFInstallation currentInstallation] addUniqueObject:strippedNumber forKey:@"channels"];
                 
-                
-                
                 [[PFInstallation currentInstallation] saveInBackground];
                 */
                 [self.viewModel.loginCommand execute:nil];
@@ -209,7 +205,12 @@
 - (void)closeLoginView {
    
     self.activityIndicatorView.hidden = YES;
+    UIViewAnimationTransition trans = UIViewAnimationTransitionCurlUp;
+    [UIView beginAnimations: nil context: nil];
+    [UIView setAnimationDuration:1.0];
+    [UIView setAnimationTransition: trans forView: [self.view window] cache: YES];
     [self dismissViewControllerAnimated:YES completion:nil];
+    [UIView commitAnimations];
    
 }
 #pragma mark - UITextFieldDelegate

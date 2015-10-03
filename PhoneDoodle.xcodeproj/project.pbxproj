@@ -18,6 +18,12 @@
 		855C890DC99847ED4FE598EB /* WelcomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 855C828C4AEED527342CE055 /* WelcomePageViewController.m */; };
 		855C8A3D2C76787ADDFAA658 /* NSObject+BTRACAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 855C8EFF7D859F6F82136A1C /* NSObject+BTRACAdditions.m */; };
 		855C8E07881453CFE1576C70 /* UIColor+DMHexColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 855C8F31638A6198AF6C0FEA /* UIColor+DMHexColors.m */; };
+		E846503B1BBC2715005BC90D /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E846503A1BBC2715005BC90D /* iAd.framework */; };
+		E846503D1BBC2725005BC90D /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E846503C1BBC2725005BC90D /* MessageUI.framework */; };
+		E84650411BBC2744005BC90D /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E84650401BBC2744005BC90D /* Social.framework */; };
+		E84650431BBC2761005BC90D /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E84650421BBC2761005BC90D /* Twitter.framework */; };
+		E84650461BBC2E24005BC90D /* StartApp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E84650441BBC2E24005BC90D /* StartApp.bundle */; };
+		E84650471BBC2E24005BC90D /* StartApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E84650451BBC2E24005BC90D /* StartApp.framework */; };
 		E856828D1B6E744E00C47736 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E856828C1B6E744E00C47736 /* main.m */; };
 		E85682901B6E744E00C47736 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E856828F1B6E744E00C47736 /* AppDelegate.m */; };
 		E85682931B6E744E00C47736 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E85682921B6E744E00C47736 /* ViewController.m */; };
@@ -78,12 +84,12 @@
 		E8C6B7E41B94F0C5002B1C78 /* vg_mute_on.png in Resources */ = {isa = PBXBuildFile; fileRef = E8C6B7DD1B94F0C5002B1C78 /* vg_mute_on.png */; };
 		E8C6B7E51B94F0C5002B1C78 /* vg_privacy.png in Resources */ = {isa = PBXBuildFile; fileRef = E8C6B7DE1B94F0C5002B1C78 /* vg_privacy.png */; };
 		E8C6B7E61B94F0C5002B1C78 /* VungleSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8C6B7DF1B94F0C5002B1C78 /* VungleSDK.framework */; };
-		E8C6B7ED1B961415002B1C78 /* StartApp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E8C6B7EB1B961415002B1C78 /* StartApp.bundle */; };
-		E8C6B7EE1B961415002B1C78 /* StartApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8C6B7EC1B961415002B1C78 /* StartApp.framework */; };
 		E8C6B7F01B962FF2002B1C78 /* SDicon2.png in Resources */ = {isa = PBXBuildFile; fileRef = E8C6B7EF1B962FF2002B1C78 /* SDicon2.png */; };
 		E8C6B7F21B964673002B1C78 /* slider_dot@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E8C6B7F11B964673002B1C78 /* slider_dot@3x.png */; };
 		E8C6B7F41B9646F3002B1C78 /* slider@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = E8C6B7F31B9646F3002B1C78 /* slider@3x.png */; };
 		E8C6B7F61B965FB1002B1C78 /* SDicon.png in Resources */ = {isa = PBXBuildFile; fileRef = E8C6B7F51B965FB1002B1C78 /* SDicon.png */; };
+		E8C6B8301BA18A06002B1C78 /* DMIcon3Jpg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E8C6B82F1BA18A06002B1C78 /* DMIcon3Jpg.jpg */; };
+		E8C6B8321BA18B3E002B1C78 /* SDicon3.png in Resources */ = {isa = PBXBuildFile; fileRef = E8C6B8311BA18B3E002B1C78 /* SDicon3.png */; };
 		E8D0A5721B8E27B80066ED6E /* customSlider.png in Resources */ = {isa = PBXBuildFile; fileRef = E8D0A5711B8E27B80066ED6E /* customSlider.png */; };
 		E8D0A5741B8E281B0066ED6E /* customSlider2.png in Resources */ = {isa = PBXBuildFile; fileRef = E8D0A5731B8E281B0066ED6E /* customSlider2.png */; };
 		E8D0A5771B8E88B00066ED6E /* ShopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E8D0A5761B8E88B00066ED6E /* ShopViewController.m */; };
@@ -122,6 +128,13 @@
 		855C8EFF7D859F6F82136A1C /* NSObject+BTRACAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+BTRACAdditions.m"; path = "Categories/NSObject+BTRACAdditions.m"; sourceTree = "<group>"; };
 		855C8F31638A6198AF6C0FEA /* UIColor+DMHexColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+DMHexColors.m"; path = "Categories/UIColor+DMHexColors.m"; sourceTree = "<group>"; };
 		B80DBC8390825CC8AB223847 /* libPods-PhoneDoodle.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PhoneDoodle.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E846503A1BBC2715005BC90D /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		E846503C1BBC2725005BC90D /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		E846503E1BBC2734005BC90D /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
+		E84650401BBC2744005BC90D /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		E84650421BBC2761005BC90D /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		E84650441BBC2E24005BC90D /* StartApp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = StartApp.bundle; sourceTree = "<group>"; };
+		E84650451BBC2E24005BC90D /* StartApp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = StartApp.framework; sourceTree = "<group>"; };
 		E85682871B6E744E00C47736 /* PhoneDoodle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhoneDoodle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E856828B1B6E744E00C47736 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E856828C1B6E744E00C47736 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -192,12 +205,12 @@
 		E8C6B7DD1B94F0C5002B1C78 /* vg_mute_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vg_mute_on.png; sourceTree = "<group>"; };
 		E8C6B7DE1B94F0C5002B1C78 /* vg_privacy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vg_privacy.png; sourceTree = "<group>"; };
 		E8C6B7DF1B94F0C5002B1C78 /* VungleSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = VungleSDK.framework; sourceTree = "<group>"; };
-		E8C6B7EB1B961415002B1C78 /* StartApp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = StartApp.bundle; path = "../Downloads/IOS-InApp SDK-InApp-3.1.0/StartApp.bundle"; sourceTree = "<group>"; };
-		E8C6B7EC1B961415002B1C78 /* StartApp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StartApp.framework; path = "../Downloads/IOS-InApp SDK-InApp-3.1.0/StartApp.framework"; sourceTree = "<group>"; };
 		E8C6B7EF1B962FF2002B1C78 /* SDicon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SDicon2.png; path = images/SDicon2.png; sourceTree = "<group>"; };
 		E8C6B7F11B964673002B1C78 /* slider_dot@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "slider_dot@3x.png"; path = "images/slider_dot@3x.png"; sourceTree = "<group>"; };
 		E8C6B7F31B9646F3002B1C78 /* slider@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "slider@3x.png"; path = "images/slider@3x.png"; sourceTree = "<group>"; };
 		E8C6B7F51B965FB1002B1C78 /* SDicon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SDicon.png; path = images/SDicon.png; sourceTree = "<group>"; };
+		E8C6B82F1BA18A06002B1C78 /* DMIcon3Jpg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = DMIcon3Jpg.jpg; path = images/DMIcon3Jpg.jpg; sourceTree = "<group>"; };
+		E8C6B8311BA18B3E002B1C78 /* SDicon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SDicon3.png; path = images/SDicon3.png; sourceTree = "<group>"; };
 		E8D0A5711B8E27B80066ED6E /* customSlider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = customSlider.png; path = images/customSlider.png; sourceTree = "<group>"; };
 		E8D0A5731B8E281B0066ED6E /* customSlider2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = customSlider2.png; path = images/customSlider2.png; sourceTree = "<group>"; };
 		E8D0A5751B8E88B00066ED6E /* ShopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShopViewController.h; path = ViewControllers/ShopViewController.h; sourceTree = "<group>"; };
@@ -210,11 +223,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E84650431BBC2761005BC90D /* Twitter.framework in Frameworks */,
+				E84650411BBC2744005BC90D /* Social.framework in Frameworks */,
+				E846503D1BBC2725005BC90D /* MessageUI.framework in Frameworks */,
+				E846503B1BBC2715005BC90D /* iAd.framework in Frameworks */,
 				E8C6B7561B90DE8B002B1C78 /* MediaPlayer.framework in Frameworks */,
 				E8C6B7541B90DE6A002B1C78 /* libsqlite3.dylib in Frameworks */,
 				E8C6B7501B90CA24002B1C78 /* libz.dylib in Frameworks */,
-				E8C6B7EE1B961415002B1C78 /* StartApp.framework in Frameworks */,
 				E8C6B74E1B90CA17002B1C78 /* AVFoundation.framework in Frameworks */,
+				E84650471BBC2E24005BC90D /* StartApp.framework in Frameworks */,
 				E8C6B74C1B90CA0C002B1C78 /* CoreMedia.framework in Frameworks */,
 				E8C6B74A1B90C9FB002B1C78 /* CoreTelephony.framework in Frameworks */,
 				E8C6B7481B90C9EF002B1C78 /* AdSupport.framework in Frameworks */,
@@ -247,9 +264,12 @@
 		B8061277CCAC52CDE9EF3BEB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E84650421BBC2761005BC90D /* Twitter.framework */,
+				E84650401BBC2744005BC90D /* Social.framework */,
+				E846503E1BBC2734005BC90D /* PassKit.framework */,
+				E846503C1BBC2725005BC90D /* MessageUI.framework */,
+				E846503A1BBC2715005BC90D /* iAd.framework */,
 				E8C6B7D71B94F0C5002B1C78 /* VungleSDK.embeddedframework */,
-				E8C6B7EB1B961415002B1C78 /* StartApp.bundle */,
-				E8C6B7EC1B961415002B1C78 /* StartApp.framework */,
 				E8C6B7551B90DE8B002B1C78 /* MediaPlayer.framework */,
 				E8C6B7531B90DE6A002B1C78 /* libsqlite3.dylib */,
 				E8C6B74F1B90CA24002B1C78 /* libz.dylib */,
@@ -274,6 +294,8 @@
 		E856827E1B6E744E00C47736 = {
 			isa = PBXGroup;
 			children = (
+				E84650441BBC2E24005BC90D /* StartApp.bundle */,
+				E84650451BBC2E24005BC90D /* StartApp.framework */,
 				E85682891B6E744E00C47736 /* PhoneDoodle */,
 				E85682A31B6E744F00C47736 /* PhoneDoodleTests */,
 				E85682881B6E744E00C47736 /* Products */,
@@ -375,7 +397,9 @@
 			children = (
 				E8C6B7EF1B962FF2002B1C78 /* SDicon2.png */,
 				E8C6B7C51B94DBDB002B1C78 /* DMIcon1.png */,
+				E8C6B82F1BA18A06002B1C78 /* DMIcon3Jpg.jpg */,
 				E8D0A5711B8E27B80066ED6E /* customSlider.png */,
+				E8C6B8311BA18B3E002B1C78 /* SDicon3.png */,
 				E8D0A5731B8E281B0066ED6E /* customSlider2.png */,
 				E8C6B7F11B964673002B1C78 /* slider_dot@3x.png */,
 				E8C6B7F51B965FB1002B1C78 /* SDicon.png */,
@@ -541,7 +565,7 @@
 		E856827F1B6E744E00C47736 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Rise Digital";
 				TargetAttributes = {
 					E85682861B6E744E00C47736 = {
@@ -578,10 +602,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8C6B7ED1B961415002B1C78 /* StartApp.bundle in Resources */,
 				E8C6B7B51B94D94B002B1C78 /* Icon-Small-50.png in Resources */,
 				E8C6B7F21B964673002B1C78 /* slider_dot@3x.png in Resources */,
 				E8C6B7B21B94D94B002B1C78 /* Icon-60.png in Resources */,
+				E84650461BBC2E24005BC90D /* StartApp.bundle in Resources */,
 				E8A0D8AE1B85EA5D0048B619 /* BubblegumSans-Regular.ttf in Resources */,
 				E8C6B7E11B94F0C5002B1C78 /* vg_close.png in Resources */,
 				E8C6B7B41B94D94B002B1C78 /* Icon-72@2x.png in Resources */,
@@ -615,12 +639,14 @@
 				E8C6B7BE1B94D94B002B1C78 /* Icon-27.5@2x.png in Resources */,
 				E8C6B7F01B962FF2002B1C78 /* SDicon2.png in Resources */,
 				E8C6B7B61B94D94B002B1C78 /* Icon-Small-50@2x.png in Resources */,
+				E8C6B8321BA18B3E002B1C78 /* SDicon3.png in Resources */,
 				E8C6B7B91B94D94B002B1C78 /* iTunesArtwork.png in Resources */,
 				E8C6B7E31B94F0C5002B1C78 /* vg_mute_off.png in Resources */,
 				E85682981B6E744E00C47736 /* Images.xcassets in Resources */,
 				E8A0D8431B7A3FC50048B619 /* searchfield.png in Resources */,
 				E8C6B7A81B94D94B002B1C78 /* Icon-40.png in Resources */,
 				E8C6B7BD1B94D94B002B1C78 /* Icon-24@2x.png in Resources */,
+				E8C6B8301BA18A06002B1C78 /* DMIcon3Jpg.jpg in Resources */,
 				E8A0D8B21B85F5C80048B619 /* setting-icon.png in Resources */,
 				E8C6B7AB1B94D94B002B1C78 /* Icon-60@2x.png in Resources */,
 				E8C6B7B31B94D94B002B1C78 /* Icon-72.png in Resources */,
@@ -759,6 +785,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -830,9 +857,22 @@
 					"$(PROJECT_DIR)/VungleSDK.embeddedframework",
 					"/Users/d_walker91/Downloads/IOS-InApp",
 					"SDK-InApp-3.1.0",
+					"/Users/d_walker91/Downloads/IOS-InApp",
+					"SDK-InApp-3.1.0",
+					2,
+					"$(PROJECT_DIR)/PhoneDoodle/IOS-InApp",
+					"SDK-InApp-3.1.0",
+					"/Users/d_walker91/Downloads/IOS-InApp",
+					"SDK-InApp-3.1.0",
+					2,
+					"$(PROJECT_DIR)/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK",
+					"$(PROJECT_DIR)/MoPubSDK/AdNetworkSupport/Millennial/SDK",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = PhoneDoodle/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.RiseDigital.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -850,9 +890,22 @@
 					"$(PROJECT_DIR)/VungleSDK.embeddedframework",
 					"/Users/d_walker91/Downloads/IOS-InApp",
 					"SDK-InApp-3.1.0",
+					"/Users/d_walker91/Downloads/IOS-InApp",
+					"SDK-InApp-3.1.0",
+					2,
+					"$(PROJECT_DIR)/PhoneDoodle/IOS-InApp",
+					"SDK-InApp-3.1.0",
+					"/Users/d_walker91/Downloads/IOS-InApp",
+					"SDK-InApp-3.1.0",
+					2,
+					"$(PROJECT_DIR)/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK",
+					"$(PROJECT_DIR)/MoPubSDK/AdNetworkSupport/Millennial/SDK",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = PhoneDoodle/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.RiseDigital.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -872,6 +925,7 @@
 				);
 				INFOPLIST_FILE = PhoneDoodleTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.RiseDigital.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhoneDoodle.app/PhoneDoodle";
 			};
@@ -887,6 +941,7 @@
 				);
 				INFOPLIST_FILE = PhoneDoodleTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.RiseDigital.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhoneDoodle.app/PhoneDoodle";
 			};

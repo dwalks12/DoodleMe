@@ -34,22 +34,21 @@
 
 - (void)viewDidLoad {
 
-    //[self.gmGridView reloadData];
     self.backgroundView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
     self.activityIndicatorView.frame = CGRectMake(self.view.frame.size.width/2 - self.activityIndicatorView.frame.size.width/2, self.view.frame.size.height/2 - self.activityIndicatorView.frame.size.height/2, self.activityIndicatorView.frame.size.width, self.activityIndicatorView.frame.size.height);
     [self addSubviews];
-    //[self defineLayouts];
     [self checkGames];
 }
 
 -(void)checkGames{
     [self.activityIndicatorView startAnimating];
-     //NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:5.0f target:self selector:@selector(errorHandler) userInfo:nil repeats:NO];
     PFQuery *query = [PFQuery queryWithClassName:@"Game"];
+    query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     [query orderByDescending:@"updatedAt"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if(!error){
             //[timer invalidate];
+            self.yourGames = [[NSMutableArray alloc]init];
             if(objects.count == 0){
                 [self.activityIndicatorView stopAnimating];
             }
@@ -69,9 +68,6 @@
                 }
                 
             }
-            
-            //[self.gmGridView reloadData];
-            //[self.view addSubview:self.gmGridView];
             [self defineLayouts];
             [self attachImages];
            
@@ -109,7 +105,6 @@
         [self.imagesArray addObject:loadingImages];
     }
     for(int l = 0;l<self.yourGames.count; l ++){
-       // NSLog(@"what?");
         NSMutableArray *array = [NSMutableArray arrayWithArray:[self.yourGames[l] valueForKey:@"imagesArray"]];
         NSMutableArray *arrayOfText = [NSMutableArray arrayWithArray:[self.yourGames[l]valueForKey:@"sentText"]];
         [self.textArray addObject:arrayOfText[0]];
@@ -117,10 +112,8 @@
         fileArray = [NSMutableArray arrayWithArray:array];
         
             PFFile *imageFile = fileArray[0];
-            //NSLog(@"imageFile = %@",imageFile);
             PFImageView *imageView = [[PFImageView alloc]init];
             imageView.file = imageFile;
-           // NSLog(@"HELLO");
             [imageView loadInBackground:^(UIImage *img, NSError *error){
                 UIImageView *imageReplacement = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, (self.view.frame.size.width-45)/2, (self.view.frame.size.width-45)/2)];
                 imageReplacement.image = img;
@@ -186,7 +179,12 @@
 
 -(void)backToMain{
     MainMenuViewController *viewController = [MainMenuViewController new];
-    [self presentViewController:viewController animated:YES completion:nil];
+    UIViewAnimationTransition trans = UIViewAnimationTransitionCurlUp;
+    [UIView beginAnimations: nil context: nil];
+    [UIView setAnimationDuration:1.0];
+    [UIView setAnimationTransition: trans forView: [self.view window] cache: YES];
+    [self presentViewController:viewController animated:NO completion:nil];
+    [UIView commitAnimations];
 }
 
 #pragma mark GMGridViewDataSource
@@ -201,7 +199,6 @@
 }
 - (NSInteger)numberOfItemsInGMGridView:(GMGridView *)gridView
 {
-    //return the count of things
     return self.yourGames.count;
    
 }
@@ -210,9 +207,6 @@
 {
     
         return CGSizeMake((self.view.frame.size.width-45)/2, (self.view.frame.size.width-45)/2 + 60);
-    
-    
-    
 }
 
 - (GMGridViewCell *)GMGridView:(GMGridView *)gridView cellForItemAtIndex:(NSInteger)index
@@ -259,7 +253,7 @@
 
 - (BOOL)GMGridView:(GMGridView *)gridView canDeleteItemAtIndex:(NSInteger)index
 {
-    return NO; //index % 2 == 0;
+    return NO;
 }
 
 //////////////////////////////////////////////////////////////
@@ -291,15 +285,12 @@
     
     [alert show];
     
-    //_lastDeleteItemIndexAsked = index;
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 1)
     {
-        // [_currentData removeObjectAtIndex:_lastDeleteItemIndexAsked];
-        //[_gmGridView removeObjectAtIndex:_lastDeleteItemIndexAsked withAnimation:GMGridViewItemAnimationFade];
     }
 }
 

@@ -92,8 +92,12 @@
     }];
 }
 -(void)backToMain{
-   
+    UIViewAnimationTransition trans = UIViewAnimationTransitionCurlUp;
+    [UIView beginAnimations: nil context: nil];
+    [UIView setAnimationDuration:1.0];
+    [UIView setAnimationTransition: trans forView: [self.view window] cache: YES];
     [self dismissViewControllerAnimated:YES completion:nil];
+    [UIView commitAnimations];
 }
 
 #pragma mark -- Properties

@@ -17,8 +17,9 @@
 #import "UIColor+DMHexColors.h"
 #import "BorderedButton.h"
 #import "ColorPurchases.h"
+#import <StartApp/StartApp.h>
 
-@interface ViewController ()<ACEDrawingViewDelegate,UIAlertViewDelegate, UIScrollViewDelegate>
+@interface ViewController ()<ACEDrawingViewDelegate,UIAlertViewDelegate, UIScrollViewDelegate,STADelegateProtocol>
 @property (strong, nonatomic) ACEDrawingView *drawingView;
 @property (strong, nonatomic) UIScrollView *colorScrollView;
 @property (strong, nonatomic) UIButton *undoButton;
@@ -53,14 +54,15 @@
     int attempts;
     int long numberOfColors;
     float colorWidth;
+    STAStartAppAd* startAppAd;
 }
 
 - (void)viewDidLoad {
     //[super viewDidLoad];
-    
+    startAppAd = [[STAStartAppAd alloc] init];
     colorWidth = (self.view.frame.size.width - 60)/11;
     NSArray *countOfOwnedColors = [NSArray arrayWithArray:[[PFUser currentUser]objectForKey:@"purchased"]];
-    //NSLog(@"countof colors = %lu",countOfOwnedColors.count);
+    
     numberOfColors = 12 + (countOfOwnedColors.count *5);
     
     attempts = 0;
@@ -74,15 +76,17 @@
     
     [self checkGames];
 }
--(void)checkGames{
-    //NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:5.0f target:self selector:@selector(errorHandler) userInfo:nil repeats:NO];
 
+- (void) viewDidAppear:(BOOL)animated {
+    [startAppAd loadAdWithDelegate:self];
+}
+-(void)checkGames{
+    
     PFQuery * query = [PFQuery queryWithClassName:@"Game"];
     [query orderByDescending:@"updatedAt"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if(!error){
-           // NSLog(@"%@",objects);
-           // [timer invalidate];
+           
             NSUInteger randomIndex = arc4random() % [objects count];
             
             NSMutableArray *array = [NSMutableArray arrayWithArray:
@@ -459,6 +463,39 @@
     
     [self takeSnapShot];
 }
+- (void) didLoadAd:(STAAbstractAd*)ad{
+    
+}
+- (void) failedLoadAd:(STAAbstractAd*)ad withError:(NSError *)error{
+    
+}
+- (void) didShowAd:(STAAbstractAd*)ad{
+    
+}
+- (void) failedShowAd:(STAAbstractAd*)ad withError:(NSError *)error{
+    UIViewAnimationTransition trans = UIViewAnimationTransitionCurlUp;
+    [UIView beginAnimations: nil context: nil];
+    [UIView setAnimationDuration:1.0];
+    [UIView setAnimationTransition: trans forView: [self.view window] cache: YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
+    [UIView commitAnimations];
+}
+- (void) didCloseAd:(STAAbstractAd*)ad{
+    UIViewAnimationTransition trans = UIViewAnimationTransitionCurlUp;
+    [UIView beginAnimations: nil context: nil];
+    [UIView setAnimationDuration:1.0];
+    [UIView setAnimationTransition: trans forView: [self.view window] cache: YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
+    [UIView commitAnimations];
+}
+- (void) didClickAd:(STAAbstractAd*)ad{
+    UIViewAnimationTransition trans = UIViewAnimationTransitionCurlUp;
+    [UIView beginAnimations: nil context: nil];
+    [UIView setAnimationDuration:1.0];
+    [UIView setAnimationTransition: trans forView: [self.view window] cache: YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
+    [UIView commitAnimations];
+}
 -(void)takeSnapShot{
     //CAPTURE IMAGE!
     //self.activityIndicatorView.hidden = NO;
@@ -505,7 +542,12 @@
             if(!error){
                 [self.activityIndicatorView stopAnimating];
                 self.activityIndicatorView.hidden = YES;
-                [self dismissViewControllerAnimated:YES completion:nil];
+                
+                //SHOW AD Then dismiss.
+                
+                
+                    [startAppAd showAd];
+                
             }
             //CONTINUE ON! GO TO CHOICE VIEW CONTROLLER WHERE YOU CAN EITHER START A NEW GAME OR FIND A GAME.
             
@@ -535,7 +577,7 @@
             if(!error){
                 [self.activityIndicatorView stopAnimating];
                 self.activityIndicatorView.hidden = YES;
-                [self dismissViewControllerAnimated:YES completion:nil];
+                [startAppAd showAd];
             }
             //CONTINUE ON! GO TO CHOICE VIEW CONTROLLER WHERE YOU CAN EITHER START A NEW GAME OR FIND A GAME.
             
@@ -572,9 +614,6 @@
             [(UIButton*)self.arrayOfColorButtons[i] setSelected:YES];
         }
     }
-    
-    
-    
     self.drawingView.lineColor = clicked.backgroundColor;
 }
 
@@ -589,14 +628,17 @@
 }
 
 -(void)backToMain{
+    UIViewAnimationTransition trans = UIViewAnimationTransitionCurlUp;
+    [UIView beginAnimations: nil context: nil];
+    [UIView setAnimationDuration:1.0];
+    [UIView setAnimationTransition: trans forView: [self.view window] cache: YES];
     [self dismissViewControllerAnimated:YES completion:nil];
+    [UIView commitAnimations];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)aScrollView
 {
-    //[aScrollView setContentOffset: CGPointMake(aScrollView.contentOffset.x, 0)];
-    // or if you are sure you wanna it always on top:
-    // [aScrollView setContentOffset: CGPointMake(aScrollView.contentOffset.x, 0)];
+    
 }
 
 #pragma mark - Properties
@@ -891,7 +933,7 @@
     if(!_colorScrollView){
         _colorScrollView = [UIScrollView new];
         _colorScrollView.delegate = self;
-        _colorScrollView.contentSize = CGSizeMake(5.0f + (numberOfColors *(colorWidth+5.0f)), 50);
+        _colorScrollView.contentSize = CGSizeMake(5.0f + (numberOfColors *(colorWidth+5.0f)), 1);
        
     }
     return _colorScrollView;

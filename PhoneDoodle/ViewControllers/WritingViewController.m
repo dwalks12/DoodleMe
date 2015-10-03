@@ -196,7 +196,14 @@
 
 -(void)backToMain{
     MainMenuViewController *viewController = [MainMenuViewController new];
-    [self presentViewController:viewController animated:YES completion:nil];
+    UIViewAnimationTransition trans = UIViewAnimationTransitionCurlUp;
+    [UIView beginAnimations: nil context: nil];
+    [UIView setAnimationDuration:1.0];
+    [UIView setAnimationTransition: trans forView: [self.view window] cache: YES];
+    [self presentViewController:viewController animated:NO completion:nil];
+    [UIView commitAnimations];
+    
+    
     //[self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -290,9 +297,9 @@
         
         //self.activityIndicatorView.hidden = NO;
         //[self.activityIndicatorView startAnimating];
-        AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+            AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
             NSMutableArray *userArray = [NSMutableArray arrayWithArray:[appDelegate.gameArray valueForKey:@"usersInvolved"]];
-        
+            [userArray addObject:[PFUser currentUser].username];
             NSArray *userArrayCopy = [NSArray arrayWithArray:userArray];
         
             NSMutableArray *sentTextArray = [NSMutableArray arrayWithArray:[appDelegate.gameArray valueForKey:@"sentText"]];

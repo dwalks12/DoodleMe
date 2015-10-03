@@ -125,25 +125,50 @@
 -(void)joinAGameAction{
     //[self.joinAGame setBackgroundColor:[UIColor bt_colorWithHexValue:0xFF2C96 alpha:1.0f]];
     ViewController *joinGameViewController = [ViewController new];
-    [self presentViewController:joinGameViewController animated:YES completion:nil];
+    UIViewAnimationTransition trans = UIViewAnimationTransitionCurlUp;
+    [UIView beginAnimations: nil context: nil];
+    [UIView setAnimationDuration:1.0];
+    [UIView setAnimationTransition: trans forView: [self.view window] cache: YES];
+    [self presentViewController:joinGameViewController animated:NO completion:nil];
+    [UIView commitAnimations];
     
 }
 -(void)yourGamesAction{
     YourGamesViewController *yourGamesController = [YourGamesViewController new];
-    [self presentViewController:yourGamesController animated:YES completion:nil];
+    UIViewAnimationTransition trans = UIViewAnimationTransitionCurlUp;
+    [UIView beginAnimations: nil context: nil];
+    [UIView setAnimationDuration:1.0];
+    [UIView setAnimationTransition: trans forView: [self.view window] cache: YES];
+    [self presentViewController:yourGamesController animated:NO completion:nil];
+    [UIView commitAnimations];
 }
 -(void)startNewGameAction{
     //[self.startNewGame setBackgroundColor:[UIColor bt_colorWithHexValue:0x4CCA50 alpha:1.0f]];
     NewChainViewController *newGameController = [NewChainViewController new];
-    [self presentViewController:newGameController animated:YES completion:nil];
+    UIViewAnimationTransition trans = UIViewAnimationTransitionCurlUp;
+    [UIView beginAnimations: nil context: nil];
+    [UIView setAnimationDuration:1.0];
+    [UIView setAnimationTransition: trans forView: [self.view window] cache: YES];
+    [self presentViewController:newGameController animated:NO completion:nil];
+    [UIView commitAnimations];
 }
 -(void)shopAction{
     ShopViewController *shopController = [ShopViewController new];
-    [self presentViewController:shopController animated:YES completion:nil];
+    UIViewAnimationTransition trans = UIViewAnimationTransitionCurlUp;
+    [UIView beginAnimations: nil context: nil];
+    [UIView setAnimationDuration:1.0];
+    [UIView setAnimationTransition: trans forView: [self.view window] cache: YES];
+    [self presentViewController:shopController animated:NO completion:nil];
+    [UIView commitAnimations];
 }
 -(void)goToSettings{
     SettingsViewController *settingsViewController = [SettingsViewController new];
-    [self presentViewController:settingsViewController animated:YES completion:nil];
+    UIViewAnimationTransition trans = UIViewAnimationTransitionCurlUp;
+    [UIView beginAnimations: nil context: nil];
+    [UIView setAnimationDuration:1.0];
+    [UIView setAnimationTransition: trans forView: [self.view window] cache: YES];
+    [self presentViewController:settingsViewController animated:NO completion:nil];
+    [UIView commitAnimations];
 }
 - (void) styleButton:(UIButton*)button
 {

@@ -168,7 +168,7 @@
 -(void)submit{
     if(self.sentText.length >= 1){
         //NSLog(@"send that text");
-       self.activityIndicatorView.hidden = NO;
+        self.activityIndicatorView.hidden = NO;
         [self.activityIndicatorView startAnimating];
 
         NSMutableArray *mutableArray = [[NSMutableArray alloc]initWithObjects:[PFUser currentUser].username, nil];
@@ -203,10 +203,20 @@
     
 }
 -(void)backToMain{
-    [self dismissViewControllerAnimated:YES completion:nil];
+    UIViewAnimationTransition trans = UIViewAnimationTransitionCurlUp;
+    [UIView beginAnimations: nil context: nil];
+    [UIView setAnimationDuration:1.0];
+    [UIView setAnimationTransition: trans forView: [self.view window] cache: YES];
+    [self dismissViewControllerAnimated:NO completion:nil];
+    [UIView commitAnimations];
 }
 -(void)navigateToNewGame{
-    [self dismissViewControllerAnimated:YES completion:nil];
+    UIViewAnimationTransition trans = UIViewAnimationTransitionCurlUp;
+    [UIView beginAnimations: nil context: nil];
+    [UIView setAnimationDuration:1.0];
+    [UIView setAnimationTransition: trans forView: [self.view window] cache: YES];
+    [self dismissViewControllerAnimated:NO completion:nil];
+    [UIView commitAnimations];
    
 
 }
