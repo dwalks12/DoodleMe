@@ -74,7 +74,7 @@
             
         }
         else{
-            [self backToMain];
+            //[self backToMain];
         }
         
     }];

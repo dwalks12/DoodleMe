@@ -33,8 +33,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [NSThread sleepForTimeInterval:2];
-    // Override point for customization after application launch.
-    //ViewController *viewController = [ViewController new];
     STAStartAppSDK* sdk = [STAStartAppSDK sharedInstance];
     sdk.devID = @"107449490";
     sdk.appID = @"207921218";
@@ -53,10 +51,6 @@
     [[AFNetworkReachabilityManager sharedManager] startMonitoring];
     
     [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
-        
-        NSLog(@"Reachability changed: %@", AFStringFromNetworkReachabilityStatus(status));
-        
-        
         switch (status) {
             case AFNetworkReachabilityStatusReachableViaWWAN:
             case AFNetworkReachabilityStatusReachableViaWiFi:
@@ -66,7 +60,6 @@
             case AFNetworkReachabilityStatusNotReachable:
             default:
                 // -- Not reachable -- //
-                
                 NSLog(@"Not Reachable");
                 UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"Sorry!" message:@"Please make sure you are connected to the internet" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Ok", nil];
                 [alertView show];
@@ -76,7 +69,6 @@
     }];
     self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
 
-    //UIViewController *vc = [[[UIApplication sharedApplication] keyWindow] rootViewController];
     MainMenuViewController *viewController = [MainMenuViewController new];
     self.window.rootViewController = viewController;
     [self.window makeKeyAndVisible];
@@ -87,11 +79,9 @@
         [self.window.rootViewController presentViewController:loginViewController animated:YES completion:nil];
     }
     else{
-       // NewChainViewController * newChainController = [NewChainViewController new];
-        //[self.window.rootViewController presentViewController:newChainController animated:YES completion:nil];
+       
     }
-    //[vc presentViewController:viewController animated:YES completion:nil];
-    //[[[[UIApplication sharedApplication] keyWindow] rootViewController] presentViewController:viewController animated:YES completion:^{}];
+   
     return YES;
 }
 - (void)setupDevelopmentEnvironment {

@@ -60,6 +60,7 @@
 - (void)viewDidLoad {
     //[super viewDidLoad];
     startAppAd = [[STAStartAppAd alloc] init];
+    [startAppAd loadAdWithDelegate:self];
     colorWidth = (self.view.frame.size.width - 60)/11;
     NSArray *countOfOwnedColors = [NSArray arrayWithArray:[[PFUser currentUser]objectForKey:@"purchased"]];
     
